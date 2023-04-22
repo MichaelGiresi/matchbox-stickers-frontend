@@ -1,0 +1,280 @@
+.howItWorks {
+    background-color: rgba(230, 215, 176, 1);
+    background-image: (url(../../../assets/creamTexture.jpeg));
+}
+
+.howItWorks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 1600px;
+    margin: 0 auto 0 auto; 
+}
+
+.howItWorks-image-info-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 auto 150px auto;
+    @media(min-width: 800px) {
+        margin-bottom: 250px;
+    }
+    @media(min-width: 1200px) {
+        margin-bottom: 300px;
+    }
+} 
+
+.howItWorks-info-container1{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.howItWorks-image-info-container2 {
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @media(min-width: 800px) {
+        display:flex;
+    }
+}
+
+.howItWorks-image-info-container3 {
+    width: 300px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @media(min-width: 1200px) {
+        display: flex;
+    }
+}
+
+.howItWorks-image1{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+.howItWorks-image2{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+.howItWorks-image3{
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 100%;
+}
+
+.howItWorks-getdropalerts-container {
+    width: auto;
+    max-width: 1600px;
+    height: 370px;
+    background-color: #e42e33;
+    background-image: (url(../../../assets/redTextire.jpeg));
+    margin: 0 2% 170px 2%;
+    border-radius: 15px;
+    display: flex;
+    @media(min-width: 1200px) {
+        height: 500px;
+    }
+    @media (min-width: 1800px) {
+        margin: 0 0 170px 0
+    }
+}
+
+.howItWorks-getdropalerts-img-container{
+    width: 50%;
+    height: 100%;   
+    display: none; 
+    @media(min-width: 600px) {
+        display: flex;
+    }
+}
+
+.hotItWorks-getdropalerts-text-input-container {
+    width: 100%;
+    height: 70%;
+    margin: auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    @media (min-width: 600px) {
+        width: 50%;
+        height: 70%;
+        margin: auto 0 auto 0;
+        align-items: flex-start;
+    }
+    @media (min-width: 1200px) {
+        height: 60%;
+    }
+}
+
+.howItWorks-getdropalerts-text-input-inner-container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.howItWorks-getdropalerts-input {
+    background-image: (url(../../../assets/redTextire.jpeg));
+    border: 1px solid black;
+    border-radius: 6px;
+    width: 100%;
+    height: 70%;
+    color: white;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 0;
+    margin-bottom: 2%;
+    @media (min-width: 1200px) {
+        height: 100%;
+        width: 68%;
+        margin-right: 2%;
+        font-size: 15px;
+    }
+}
+
+::placeholder {
+    color: #fff;
+    letter-spacing: 2px;
+    opacity: .75;
+}
+
+.howItWorks-getdropalerts-input-button{
+    height: 45px;
+    width: 100.6%;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+    box-shadow: none;
+    cursor: pointer;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1px;
+    border: 1px black solid;
+    @media (min-width: 1200px) {
+        width: 30%;
+        height: 57px;
+        font-size: 18px
+    }
+}
+
+.howItWorks-title-paragraph{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto 5% auto;
+    line-height: 25px;
+    font-family: "Barlow";
+    margin-bottom: 10%;
+    @media (min-width: 500px) {
+        width: 33%;
+        line-height: 30px;
+    }
+    @media(min-width: 1000px) {
+        margin-bottom: 5%;
+    }
+    @media (min-width: 1600px) {
+        margin-bottom: 3%;
+    }
+}
+
+.howItWorks-title {
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 6.5%;
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+}
+
+.howItWorks-imagetitle-styles {
+    margin: 40px 0 5% 0;
+    font-family: "Barlow";
+    font-weight: bold;
+    font-size: 34px;
+}
+
+.howItWorks-imageparagraph-styles {
+    line-height: 25px;
+}
+
+.howItWorks-getdropalerts-text-input-inner-container h5 {
+    font-family: 'Allerta Stencil', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    font-size: 19px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    @media (min-width: 900px) {
+        font-size: 30px;
+    }
+    @media (min-width: 1200px) {
+        font-size: 42px;
+    }
+}
+
+.howItWorks-getdropalerts-text-input-inner-container h6 {
+    font-family: 'Allerta Stencil', sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    margin-bottom: 0;
+    font-size: 9px;
+    margin-top: 0;
+    @media (min-width: 900px) {
+        font-size: 14px;
+    }
+    @media (min-width: 1200px) {
+        font-size: 23px;
+    }
+}
+
+.howItWorks-getdropalerts-text-input-inner-container p {
+    font-family: 'Barlow';
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: white;
+    margin: 0 0 0 0;
+    @media (min-width: 900px) {
+        font-size: 16px;
+    }
+    @media (min-width: 1200px) {
+        font-size: 14px;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+}
+
+.input-button-container {
+    width: 100%;
+    height: 19%;
+    @media (min-width: 1200px) {
+        display: flex;
+    }
+}
+
+.howItWorks-getdropalerts-text-container{
+    height: 55%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 1200px) {
+        height: 65%;
+    }
+}

@@ -1,0 +1,41 @@
+.redBullets-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto 0 auto;
+    background-color: #fff;
+    font-family: 'Barlow';
+    font-weight: 300;
+}
+
+.redBullets-redCircle {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 10px;
+    margin: auto 0 auto 0;
+}
+
+.redBullets-container1 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2.2%;
+}
+
+.redBullets-container2 {
+    display: none;
+    flex-direction: row;
+    @media(min-width: 780px) {
+        display: flex;
+    }
+}
+
+.redBullets-container3 {
+    display: none;
+    flex-direction: row;
+    margin-right: 2.6%;
+    @media(min-width: 430px) {
+        display: flex;
+    }
+}

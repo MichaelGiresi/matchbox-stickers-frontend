@@ -1,0 +1,44 @@
+Main TODO list:
+
+Converting JS to TS:
+
+    DONE!    -- Fix Nav
+    DONE!    -- Fix Footer
+    DONE!    -- Fix Video Player
+    DONE!    -- Fix Hero
+    DONE!    -- Fix Nav Carousel
+    DONE!    -- Fix How it works
+    DONE!    -- Fix mbs merch
+    DONE!    -- Fix previous-drops
+    DONE!    -- Fix red-bullets
+
+Index
+
+        -- Fix fonts
+
+Nav
+
+        -- matchbox stickers image resize
+        -- matchbox stickers image clickable
+
+
+App
+
+        -- React Router Dom
+
+
+Database
+
+        -- Setup Database
+
+Spring Boot
+
+        -- Setup Spring Boot
+        -- Build entities for tables 
+        -- build repositories for entities
+        
+Random:
+
+
+        -- Get 10 product images
+        -- Upload images

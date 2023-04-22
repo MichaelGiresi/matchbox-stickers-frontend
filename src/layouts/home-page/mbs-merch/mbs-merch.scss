@@ -1,0 +1,160 @@
+.mbsmerch-container {
+    background-color: rgba(255, 255, 255, 255);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1600px;
+    margin: 0 auto 0 auto;
+}
+
+.mbsmerch-tiles-container {
+    margin-bottom: 130px;
+    display: flex;
+}
+
+.mbsmerch-tiles-box-container1 {
+    width: 280px;
+    height: 400px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 425px) {
+        width: 400px;
+    }
+    @media (min-width: 654px) {
+        width: 300px;
+        height:300px;
+    }
+    @media (min-width: 1024px) {
+        width: 400px;
+        height: 400px;
+    }
+    @media (min-width: 1440px) {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+.mbsmerch-tiles-box-container2 {
+    width: 50%;
+    background-color: white;
+    height: 100%;
+    margin-left: 1%;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    @media(min-width: 654px) {
+        display: flex;
+        width: 180px;
+        height: 300px;
+    }
+    @media (min-width: 1024px) {
+        width: 300px;
+        height: 400px;
+    }
+    @media (min-width: 1440px) {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+.mbsmerch-tiles-box-container3 {
+    width: 24%;
+    background-color: white;
+    height: 100%;
+    margin-left: 1%;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: 1024px){
+        display: flex;
+        width: 300px;
+        height: 400px;
+    }
+    @media (min-width: 1440px) {
+        width: 300px;
+        height: 500px;
+    }
+}
+
+.mbsmerch-box1-btn {
+    width: 52%;
+    height: 12%;
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(230, 215, 176, 1);
+    font-size: 130%;
+    border-radius: 10px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+.mbsmerch-box1 {
+    width: 100%;
+    background-color: rgba(230, 215, 176, .35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.mbsmerch-box2 {
+    width: 100%;
+    background-color:  rgba(230, 215, 176, 1);
+    opacity: 0.35;
+    height: 56%;
+    border-radius: 10px;
+}
+
+.mbsmerch-box3 {
+    width: 100%;
+    background-color: #e6d7b0;
+    opacity: 0.35;
+    height: 42%;
+    border-radius: 10px;
+}
+
+.mbsmerch-box4 {
+    width: 100%;
+    height: 35%;
+    background-color: #e6d7b0;
+    opacity: 0.35;
+    border-radius: 10px;
+}
+
+.mbsmerch-box5 {
+    width: 100%;
+    height: 63%;
+    background-color: #e6d7b0;
+    opacity: 0.35;
+    border-radius: 10px;  
+}
+
+.mbsmerch-title{
+    margin-bottom: 90px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-family: 'Allerta Stencil', sans-serif;
+    margin-top: 60px;
+}
+
+.mbsmerch-box1-btn {
+  width: 60%;
+  height: 8%;
+  border-radius: 5px;
+  background-image: (url('../../../assets/footerTexture.jpeg'));
+  color: white;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+  border: none;
+  border-width: 0px;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 15px;
+  @media (min-width: 324px) {
+      font-size: 20px;
+  }
+}
+

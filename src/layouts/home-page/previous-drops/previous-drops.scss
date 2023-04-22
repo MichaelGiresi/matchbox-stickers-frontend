@@ -1,0 +1,210 @@
+.previousdrops {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    // background-color: blue;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.previousdrops-text-container {
+// border: green 1px solid;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-bottom: 200px;
+
+}
+
+.previousdrops-text-container h4 {
+    font-size: 35px;
+    margin-bottom: 0px;
+}
+
+.previousdrops-text-container h6 {
+    font-size: 18px;
+    margin-top: 7px;
+    margin-bottom: 0px;
+}
+
+.previousdrops-carousel {
+    // background-color: red;
+    width: 82%;
+    height: 700px;
+}
+
+.previousdrops-carousel-nav-container {
+    // background-color: orange;
+    width: 100%;
+    height: 20%;
+    // border: 1px red solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.previousdrops-carousel-nav-line-container{
+    width: 100%;
+    height: 50%;
+    // background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    // border: 1px red solid;
+}
+
+
+.previousdrops-carousel-slides-container {
+    // background-color: w;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.previousdrops-carousel-slide1-container {
+    width: 32%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+}
+
+// CAROUSEL SLIDE ONE
+.previousdrops-carousel-slide1-image-container{
+    background-color: rgba(230, 215, 176, .35);
+    width: 100%;
+    height: 65%;
+    border-radius: 15px;
+}
+.previousdrops-carousel-slide2-container {
+    width: 32%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.previousdrops-carousel-slide2-image-container{
+    background-color: rgba(230, 215, 176, .35);
+    width: 100%;
+    height: 65%;
+    border-radius: 15px;
+}
+
+.previousdrops-carousel-slide2-title-button-remaining-container {
+    height: 30%;
+    width: 100%;
+    // background-color: black;
+    // border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.previousdrops-carousel-slide2-title-button-remaining-container button {
+    width: 55%;
+    height: 50px;
+    border-radius: 8px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, .2);
+    color: #000;
+}
+
+
+.previousdrops-carousel-slide3-container {
+    width: 32%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+}
+.previousdrops-carousel-slide3-image-container{
+    background-color: rgba(230, 215, 176, .35);
+    width: 100%;
+    height: 65%;
+    border-radius: 15px;
+}
+.previousdrops-carousel-slide3-title-button-remaining-container button {
+    width: 55%;
+    height: 50px;
+    border-radius: 8px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, .2);
+    color: #000;
+}
+.previousdrops-carousel-nav-button-container {
+    display: flex;
+    justify-content: right;
+    // width: 200px;
+    height: 44%;
+    // border: 1px black solid;
+}
+
+#previousdrops-carousel-nav-button-left {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    background-color: black;
+    color: #e6d7b0;
+    border-radius: 6px;
+    border-width: 0px;
+    cursor: pointer;
+}
+
+#previousdrops-carousel-nav-button-right {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    margin-left: 10px;
+    background-color: black;
+    color: #e6d7b0;
+    border-radius: 6px;
+    border-width: 0px;
+    cursor: pointer;
+    
+}
+
+.previousdrops-carousel-nav-line{
+    height: 1px;
+    width: 100%;
+    background-color: gray;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+    
+}
+.previousdrops-carousel-nav-progress-line {
+    width: 13%;
+    height: 8px;
+    background-color: black;
+    position: absolute;
+}
+
+.previousdrops-carousel-slide1-title-button-remaining-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.previousdrops-carousel-slide3-title-button-remaining-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.previousdrops-carousel-slide1-title-button-remaining-container button {
+    width: 55%;
+    height: 50px;
+    border-radius: 8px;
+    border-width: 0px;
+    background-color: rgba(0, 0, 0, .2);
+    color: #000;
+}

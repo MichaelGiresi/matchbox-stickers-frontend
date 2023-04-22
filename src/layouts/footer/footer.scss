@@ -1,0 +1,115 @@
+.footer {
+    background-image: (url(../../assets/creamTexture.jpeg));
+    z-index: -1;
+}
+
+.footer-container {
+    background-color: black;
+    background-image: (url(../../assets/footerTexture.jpeg));
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-inner-container {
+    display: flex; 
+    flex-direction: row; 
+    margin: 0 2% 0 2%;
+    width: 100%;
+    max-width: 1600px;
+    justify-content: space-between;
+    @media (min-width: 1600px) {
+       margin: 0 auto 0 auto;
+    }
+}
+
+.footer-mbs-container {
+    margin-top: 60px;
+    @media (max-width: 600px) {
+        display: none;
+    }
+}
+
+.footer-shop-container {
+    margin-top: 60px;
+    color: white;
+    line-height: 2;
+}
+
+.about-about {
+    font-family: "Barlow";
+}
+
+.footer-about-container {
+    margin-top: 60px;
+    color: #e6d7b0;
+    line-height: 2;
+}
+
+.footer-social-container {
+    margin-top: 60px;
+    color: white;
+}
+
+.footer-social-inner-container {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    @media (min-width: 600px){
+        flex-direction: row;
+    }
+}
+
+.footer-mbs {
+    color: white;
+    background-color: white;
+    margin-top: 9px;
+}
+
+.shop-title {
+    color: white;
+    margin-bottom: 20px;
+    font-family:'Allerta Stencil', sans-serif;
+}
+
+.about-title-footer {
+    color: white;
+    margin-bottom: 20px;
+    font-family:'Allerta Stencil', sans-serif;
+}
+
+.footer-about-container div {
+    color: white;
+}
+.footer-social {
+    color: white ;
+    font-family: 'Allerta Stencil', sans-serif;
+    
+}
+.insta {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.twitter {
+    font-size: 30px;
+    margin-right: 10px;
+}
+.facebook {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.google {
+    font-size: 30px;
+
+}
+
+.titles-styles {
+ font-family: 'Barlow';
+}
