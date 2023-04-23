@@ -1,20 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import './nav-carousel.css'
 
 const NavCarousel = () => {
-  return <div>
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-      <AwesomeSlider className='nav-carousel'>
-          <div>Each sticker pack contains x stickers. % basic stickers are gaurenteed per pack. Each pack has a 1/5 chance of containing an “Elite” sticker.</div>
-          <div>Each drop has a defined quantity, and once it's gone, it won't return</div>
-          <div>We release drops that are unique, and of the highest quality</div>
-          <div>Don't miss out</div>
+  const interval = 10000; // 10 seconds
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % 4); // Change 4 to the number of slides
+    }, interval);
+
+    // Clean up the timer on unmount
+    return () => clearTimeout(timer);
+  }, [currentSlide]);
+
+  return (
+    <div>
+      <AwesomeSlider
+        className="nav-carousel"
+        selected={currentSlide}
+        onTransitionEnd={({ currentIndex }) => setCurrentSlide(currentIndex)}
+      >
+        <div>
+          A unique marketplace for exclusive, limited edition art. Creators control sale time & quantity.
+        </div>
+        <div>
+          Collectors enjoy the thrill of securing rare, one-of-a-kind creations.
+        </div>
+        <div>
+          Each drop is exclusive and once it's gone, it won't return.
+        </div>
+        <div>
+          Join our community and experience the excitement of collecting and creating like never before.
+        </div>
       </AwesomeSlider>
-
-
-        </div>;
+    </div>
+  );
 };
 
 export default NavCarousel;

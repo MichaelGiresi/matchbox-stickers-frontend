@@ -1,55 +1,75 @@
 import React, {useState, useEffect} from 'react'
 import mbsSmall from '../../assets/mbsSmall.png'
+import mbsMedium from '../../assets/mbsMedium.png'
+import { Link } from 'react-router-dom';
 import './nav.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const Nav = () => {
 
   const aboutId = document.getElementById('aboutId');
   const [about, setAbout] = useState(true)
+  const [menuVisible, setMenuVisible] = useState(false)
+  const [aboutOverlayVisible, setAboutOverlayVisible] = useState(false)
 
-  const AboutPage = () => {
+  const toggleMenu = () => {
+    setMenuVisible(!menuVisible);
+  }
 
-    if (about) {
-      setAbout(false);
-    } else {
-      setAbout(true);
-    }
-    
-    if (aboutId) {
-      if (about) {
-        aboutId.classList.add('about-page-active');
-      } else {
-        aboutId.classList.remove('about-page-active');
-      }
-    }
+  const toggleAboutOverlay = () => {
+    setAboutOverlayVisible(!aboutOverlayVisible)
+  }
+
+  const mobileAboutPage = () => {
+    toggleAboutOverlay()
+    toggleMenu()
   }
     
+
 
 
 
   return (
     <div className='nav'>
       {/* About Page Start */}
-      <div id="aboutId" className='about-page' onClick={() => {AboutPage()}}>
-        <div className='about-title'>MATCHBOX STICKERS</div>
-        <div className='about-info'>Matchbox Stickers curates arist series sticker drops packaged in a proprietary matchbox.</div>
-        <div className='about-how-container'>
-          <div className='about-how-title'>HOW'S IT WORK?</div>
-          <div className='about-how-info'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium corrupti veniam molestiae quidem, nemo inventore explicabo quo maxime sunt placeat laborum repudiandae vitae consectetur beatae magnam perferendis delectus facilis ratione labore atque? Aliquid, similique! Ducimus nobis, deleniti expedita saepe odio cum fugit doloribus commodi quis dolor eligendi voluptas quas laudantium!</div>
-        </div>
-      </div>
+
       {/* Nav Start */}
+      
       <nav className='nav-container'>
-        <ul className='nav-container'>
-          <li className='nav-about'>
-            <a className='nav-about-title' onClick={() => {AboutPage()}}>ABOUT THE PROJECT</a>
-          </li>
-          <li className='nav-img'><img src={mbsSmall}/></li>
-          <li className='nav-account-cart-container'>
-            <a className='nav-account'>SHOP ALL</a>
-          </li>
-        </ul>
+        <div className='nav-container-desktop-links'>
+          <div onClick={toggleAboutOverlay} className='nav-about'>
+            ABOUT THE PROJECT
+          </div>
+          <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
+          <div className='nav-account-cart-container'>
+            SHOP ALL
+          </div>
+        </div>
+        <div style={{marginLeft: "15px"}} className='nav-img-hamburger'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
+      <FontAwesomeIcon onClick={toggleMenu} className='hamburger-nav-icon' style={{marginRight: "15px", marginTop: "10px"}} size='3x' icon={faBars}/>
+      <div className={`menu ${menuVisible ? 'active' : ''}`}>
+        <div className='hamburger-menu-container' style={{height: "70px"}}>
+      <FontAwesomeIcon onClick={toggleMenu} className='hamburger-nav-icon' style={{marginRight: "15px", marginTop: "10px"}} size='3x' icon={faBars}/>
+        </div>
+        <div className='hamburger-menu-icons' onClick={mobileAboutPage}>ABOUT PAGE</div>
+        <div className='hamburger-menu-icons'>SHOP ALL</div>
+      </div>
       </nav>
+      <div onClick={toggleAboutOverlay} className={`aboutOverlay ${aboutOverlayVisible ? 'active' : ''}`}>
+
+    <div className='about-title'>WELCOME TO MATCHBOX STICKERS</div>
+    <div className='about-info'>The ultimate online platform for aspiring creators to showcase and sell their limited edition, one-of-a-kind creations. With a focus on exclusivity and uniqueness, Matchbox Stickers brings together artists and collectors in a thrilling race against time.</div>
+    <div className='about-how-container'>
+      <div className='about-how-title'>HOW'S IT WORK?</div>
+      <div className='about-how-info'>As a creator, simply upload your one-of-a-kind designs, set your sale parameters, and watch as eager collectors flock to your exclusive, time-sensitive sale. But remember, once the stickers are sold out, they're gone for good, adding to the excitement and anticipation of each new release.
+<br/><br/>
+For collectors, Matchbox Stickers offers a treasure trove of rare and unique designs that can't be found anywhere else. The thrill of competing against time and fellow collectors to secure a limited edition piece makes every purchase a memorable experience. Plus, with new creations going live regularly, there's always something fresh and exciting to discover.
+<br/><br/>
+By connecting artists and collectors in a dynamic, fast-paced environment, Matchbox Stickers is revolutionizing the world of limited edition stickers. So, don't wait any longer! Visit matchboxstickers.com today and join our thriving community of creators and collectors, and experience the thrill of collecting and creating like never before!</div>
+    
+  </div>
+      </div>
     </div>
   )
 }
