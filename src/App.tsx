@@ -4,6 +4,9 @@ import Nav from './layouts/nav/Nav';
 import HomePageOutput from './layouts/home-page/output/HomePageOutput';
 import Footer from './layouts/footer/Footer';
 import Hero from './layouts/home-page/hero/Hero';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
+
 
 
 
@@ -11,9 +14,16 @@ import Hero from './layouts/home-page/hero/Hero';
 function App() {
   return (
     <div className='app'>
+      <Router>
       <Nav/>
-      <HomePageOutput/>
-      <Footer/>
+        <Routes>
+          <Route path="/" element={<HomePageOutput/>}/>
+          
+      
+
+        </Routes>
+      {/* <Footer/> */}
+      </Router>
 
     </div>
   );

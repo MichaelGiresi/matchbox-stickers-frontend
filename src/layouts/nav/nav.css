@@ -1,13 +1,17 @@
-.nav {
+.nav-container {
   background-image: url(../../assets/creamTexture.jpeg);
-  height: 10vh;
-  max-height: 70px;
-  min-height: 50px;
+  height: 70px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.nav-container {
-  display: flex;
+.hamburger-nav-icon {
+  cursor: pointer;
+}
+
+.nav-container-desktop-links {
+  display: none;
   height: 100%;
   justify-content: space-between;
   margin: 0 auto 0 auto;
@@ -22,25 +26,21 @@
   font-family: "Allerta Stencil", sans-serif;
   cursor: pointer;
   height: 100%;
+  margin-left: 15px;
   font-weight: 500;
   letter-spacing: 2px;
   font-size: 10px;
   text-align: left;
   width: 30%;
 }
-@media (min-width: 600px) {
+@media (min-width: 769px) {
   .nav-about {
-    font-size: 13px;
-  }
-}
-@media (min-width: 800px) {
-  .nav-about {
-    font-size: 18px;
+    font-size: large;
   }
 }
 @media (min-width: 1000px) {
   .nav-about {
-    font-size: 20px;
+    font-size: x-large;
   }
 }
 
@@ -54,15 +54,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+}
+
+.nav-img-hamburger {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-account-cart-container {
   display: flex;
+  font-family: "Allerta Stencil", sans-serif;
   justify-content: right;
   align-items: center;
-  margin: 0 0 0 0;
+  margin: 0 15px 0 0;
   width: 30%;
+}
+@media (min-width: 769px) {
+  .nav-account-cart-container {
+    font-size: large;
+  }
+}
+@media (min-width: 1000px) {
+  .nav-account-cart-container {
+    font-size: x-large;
+  }
 }
 
 .nav-account {
@@ -130,12 +148,16 @@
 .about-title {
   font-size: 40px;
   margin-bottom: 70px;
-  margin-top: 150px;
+  margin-top: 50px;
   text-align: center;
+  font-family: "Allerta Stencil";
 }
 
 .about-info {
-  font-size: 40px;
+  font-size: large;
+  font-family: "Barlow";
+  width: 80%;
+  margin: 0 auto 0 auto;
   text-align: center;
   line-height: 50px;
   font-weight: 400;
@@ -152,14 +174,84 @@
 .about-how-title {
   font-family: "Allerta Stencil";
   font-size: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 70px;
 }
 
 .about-how-info {
   font-family: "Barlow";
-  width: 77%;
+  width: 80%;
   text-align: center;
-  line-height: 25px;
-  font-size: 18px;
-  font-weight: 100;
+  line-height: 50px;
+  font-weight: 400;
+  font-size: large;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/creamTexture.jpeg);
+  z-index: 2;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.active {
+  transform: translateX(0%);
+}
+
+.hamburger-menu-container {
+  display: flex;
+  border-bottom: 3px solid black;
+  justify-content: end;
+}
+
+.hamburger-menu-icons {
+  height: 100px;
+  border-bottom: 3px black solid;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Barlow";
+  font-size: x-large;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hamburger-menu-icons:hover {
+  background-color: black;
+  color: wheat;
+}
+
+.aboutOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/creamTexture.jpeg);
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.aboutOverlay.active {
+  transform: translateY(0%);
+}
+
+@media (min-width: 769px) {
+  .nav-container-desktop-links {
+    display: flex;
+  }
+  .hamburger-nav-icon {
+    display: none;
+  }
+  .nav-img-hamburger {
+    display: none;
+  }
 }/*# sourceMappingURL=nav.css.map */
