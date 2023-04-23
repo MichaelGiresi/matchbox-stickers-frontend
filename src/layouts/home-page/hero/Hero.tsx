@@ -6,7 +6,7 @@ const Hero = () => {
 
   
     const [isPageLoaded, setIsPageLoaded] = useState(false);
-    const videoPath = `${process.env.PUBLIC_URL}/assets/video.mp4`;
+    const videoPath = `${process.env.PUBLIC_URL}/assets/mbsVideo.mp4`;
     const videoElement = useRef<HTMLVideoElement | null>(null);
     const {
       playerState,
@@ -53,7 +53,7 @@ const Hero = () => {
       <div className="hero-container">
         <div className='hero-video-buttons-container'>
           <div className='hero-buttons-video-container'>
-            <div className='hero-button-container'>
+            {/* <div className='hero-button-container'>
               <div className='hero-button-container-2'>
                 <button id='btn1' className='hero-button-1 ' onClick={setHeroButtonTime(0)}></button>
                 <button id='btn2' className='hero-button-2' onClick={setHeroButtonTime(50)} ></button>
@@ -62,7 +62,7 @@ const Hero = () => {
                 <button id="btn5" className='hero-button-5' onClick={setHeroButtonTime(200)}></button>
                 <button id="btn6" className='hero-button-6' onClick={setHeroButtonTime(250)}></button>
               </div>
-            </div>
+            </div> */}
             <div className='hero-video-container'>
               <video 
                 className="video"

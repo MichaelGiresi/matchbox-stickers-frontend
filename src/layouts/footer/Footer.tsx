@@ -2,6 +2,8 @@ import React from 'react'
 import './footer.css'
 import mbsSmall from '../../assets/mbsSmall.png'
 import {FaInstagram, FaTwitter, FaFacebook, FaGoogle} from 'react-icons/fa'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
 
@@ -32,6 +34,7 @@ const Footer = () => {
               <FaTwitter className='twitter'/>
               <FaFacebook className='facebook'/>
               <FaGoogle className='google'/>
+              
             </div>
           </div>
         </div>

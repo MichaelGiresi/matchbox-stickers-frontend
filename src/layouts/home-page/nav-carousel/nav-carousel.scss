@@ -47,7 +47,9 @@
      text-align: left;
 
    }
-   
+   .awssld__bullets {
+    display: none !important;
+  }
    .right-arrow {
      height: 100%;
      font-size: 30px;
