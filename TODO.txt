@@ -1,14 +1,45 @@
 Main TODO list:
 
+PAGES:
+
+        -- HOME 
+        -- SHOP ALL
+        -- PRODUCT
+        -- ADMIN
+
+Completion:
+        MANDATORY TO BE COMPLETED BY THURSDAY:
+
+MONDAY:
+        DONE!        -- Finish all styles for home page
+        DONE!        -- Make product page. Have each product have its own product page
+
+TUESDAY:
+
+        -- Create checkout page, with item and input fields
+        -- Have submit button send requests to server, and update database
+        -- Create admin page where products can be added, deleted, and adjusted. Also include order list
+
+WEDNESDAY:
+
+        -- implement okta on front end and back end
+        -- Only allow for users who have userType of admin to access admin page
+        -- create ssh keys
+        -- Deploy Database
+        -- Deploy Back End
+        -- Deploy Front End
+
+
+
+
 Sunday:
 
         DONE!        -- Get 10 product images
         DONE!        -- Upload images
-        -- Create Products inside of Database
-        -- Create controller for communication between database and React
-        -- Fix styling in Nav
+        DONE!        -- Create Products inside of Database
+        DONE!        -- Fix styling in Nav
         -- Fix styling in Footer
-        -- Fix styling in Hero
+        DONE!        -- Fix styling in Hero
 
 
 Converting JS to TS:

@@ -1,6 +1,7 @@
 .footer {
   background-image: url(../../assets/creamTexture.jpeg);
   z-index: -1;
+  word-break: break-word;
 }
 
 .footer-container {
@@ -23,6 +24,16 @@
   max-width: 1600px;
   justify-content: space-between;
 }
+@media (min-width: 700px) {
+  .footer-inner-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 2% 0 2%;
+    width: 100%;
+    max-width: 1600px;
+    justify-content: space-around;
+  }
+}
 @media (min-width: 1600px) {
   .footer-inner-container {
     margin: 0 auto 0 auto;
@@ -30,11 +41,13 @@
 }
 
 .footer-mbs-container {
-  margin-top: 60px;
+  margin-top: 20px;
+  align-self: center;
 }
 @media (max-width: 600px) {
   .footer-mbs-container {
     display: none;
+    margin-top: 60px;
   }
 }
 
@@ -57,6 +70,13 @@
 .footer-social-container {
   margin-top: 60px;
   color: white;
+  display: none;
+}
+@media (min-width: 300px) {
+  .footer-social-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .footer-social-inner-container {
@@ -93,6 +113,15 @@
   color: white;
 }
 
+.about-about {
+  display: none;
+}
+@media (min-width: 200px) {
+  .about-about {
+    display: flex;
+  }
+}
+
 .footer-social {
   color: white;
   font-family: "Allerta Stencil", sans-serif;
@@ -119,4 +148,10 @@
 
 .titles-styles {
   font-family: "Barlow";
+  display: none;
+}
+@media (min-width: 150px) {
+  .titles-styles {
+    display: flex;
+  }
 }/*# sourceMappingURL=footer.css.map */
