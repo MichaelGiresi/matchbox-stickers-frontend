@@ -43,7 +43,7 @@ const Nav = () => {
           </div>
           <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
           <div className='nav-account-cart-container'>
-            SHOP ALL
+          <Link style={{textDecoration: 'none', color: 'black'}} to={'/shopall'}>SHOP ALL</Link>
           </div>
         </div>
         <div style={{marginLeft: "15px"}} className='nav-img-hamburger'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>

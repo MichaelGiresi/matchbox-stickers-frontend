@@ -10,12 +10,12 @@ const HomePageOutput = () => {
   return (
     <div>
 
-    {/* <NavCarousel/> */}
-    {/* <Hero/> */}
-    {/* <RedBullets/>
-    <MbsMerch/>
+    <NavCarousel/>
+    <Hero/>
+    <RedBullets/>
+    {/* <MbsMerch/> */}
     <PreviousDrops/>
-    <HowItWorks/> */}
+    <HowItWorks/>
     </div>
   )
 }
