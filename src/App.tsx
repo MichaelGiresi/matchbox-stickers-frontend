@@ -10,6 +10,7 @@ import { Routes } from 'react-router-dom';
 import ShopAll from './layouts/shop-all/ShopAll';
 import { useEffect, useState } from 'react';
 import ProductPage from './layouts/product-page/ProductPage'
+
 import Cart from './layouts/cart/Cart';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,6 +45,10 @@ useEffect(() => {
 useEffect(() => {
   localStorage.setItem('localCartItems', JSON.stringify(localCartItems));
 }, [localCartItems]);
+
+=======
+function App() {
+const [products, setProducts] = useState()
 
   // useEffect(() => {
   //   const getProducts = async () => {
@@ -88,11 +93,16 @@ useEffect(() => {
         <Routes>
           <Route path="/" element={<HomePageOutput/>}/>
           <Route path={`/products/:productId`} element={<ProductPage/>}/>
+
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
         </Routes>
       <Footer/>
       </CartContext.Provider>
+=======
+        </Routes>
+      <Footer/>
+
       </Router>
       <ToastContainer />
     </div>
