@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import mbsSmall from '../../assets/mbsSmall.png'
 import mbsMedium from '../../assets/mbsMedium.png'
 import { Link } from 'react-router-dom';
 import './nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { CartContext } from '../../contexts/CartContext';
 
 const Nav = () => {
-
+  const cartContext = useContext(CartContext)
   const aboutId = document.getElementById('aboutId');
   const [about, setAbout] = useState(true)
   const [menuVisible, setMenuVisible] = useState(false)
@@ -32,7 +33,6 @@ const Nav = () => {
 
   return (
     <div className='nav'>
-      {/* About Page Start */}
 
       {/* Nav Start */}
       
@@ -43,7 +43,11 @@ const Nav = () => {
           </div>
           <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
           <div className='nav-account-cart-container'>
+
+          <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}>Cart ( {cartContext?.localCartItems.length} )</Link>
+
           <Link style={{textDecoration: 'none', color: 'black'}} to={'/shopall'}>SHOP ALL</Link>
+
           </div>
         </div>
         <div style={{marginLeft: "15px"}} className='nav-img-hamburger'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
@@ -53,7 +57,7 @@ const Nav = () => {
       <FontAwesomeIcon onClick={toggleMenu} className='hamburger-nav-icon' style={{marginRight: "15px", marginTop: "10px"}} size='3x' icon={faBars}/>
         </div>
         <div className='hamburger-menu-icons' onClick={mobileAboutPage}>ABOUT PAGE</div>
-        <div className='hamburger-menu-icons'>SHOP ALL</div>
+        <Link to={'/cart'} className='hamburger-menu-icons'>CART ({cartContext?.cartCount})</Link>
       </div>
       </nav>
       <div onClick={toggleAboutOverlay} className={`aboutOverlay ${aboutOverlayVisible ? 'active' : ''}`}>

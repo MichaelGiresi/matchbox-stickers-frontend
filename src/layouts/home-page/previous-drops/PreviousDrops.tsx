@@ -1,14 +1,32 @@
+
+import React, { useContext, useEffect, useState } from 'react'
+import './previous-drops.css'
+import { Product } from '../../../models/Product'
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../../contexts/CartContext';
+import {toast} from 'react-toastify'
+const PreviousDrops = () => {
+  const cartContext = useContext(CartContext)
+
 import React, { useEffect, useState } from 'react'
 import './previous-drops.css'
 import { Product } from '../../../models/Product'
 import { Link } from 'react-router-dom';
 
 const PreviousDrops = () => {
+
   const [previousDrops, setPreviousDrops] = useState<Product[] | undefined>();
   const [numContainers, setNumContainers] = useState(3)
   const [currentIndex, setCurrentIndex] = useState(0)
   const progressPercentage = (currentIndex / ((previousDrops?.length || 1) - numContainers)) * 100;
   
+
+useEffect(() => {
+  // console.log(cartContext?.cartCount)
+}, [cartContext?.cartCount])
+
+
+
 
   useEffect(() => {
     const getPreviousDrops = async () => {
@@ -77,7 +95,42 @@ const PreviousDrops = () => {
       }
     });
   };
-  
+
+
+  const addProductToCart = (product: Product) => {
+    // Update the localCartItems array
+    cartContext?.setLocalCartItems((prevItems) => [...prevItems, product]);
+
+    // Update the cartSubTotal
+    cartContext?.setCartSubTotal((prevSubTotal) => prevSubTotal + product.unitPrice);
+  };
+
+  const addToCart = (product: Product) => {
+    
+    if(cartContext?.localCartItems.length == 0) {
+      addProductToCart(product);
+      toast.success('Added To Cart!')
+    } else {
+      let a = false
+      for(let i = 0; i < cartContext?.localCartItems.length!; i++) {
+        
+        if(product.id == cartContext?.localCartItems[i].id) {
+          console.log(`The product id = ${product.id} and the cartItemId = ${cartContext?.localCartItems[i].id}`)
+          a = true
+          
+        }
+      }
+        if(a === false) {
+
+          addProductToCart(product);
+          toast.success('Added To Cart!')
+        } else {
+
+          toast.error ('Product Already in Cart')
+        }
+        
+    }
+  };
   
 
 
@@ -103,7 +156,11 @@ const PreviousDrops = () => {
             <Link to={`/products/${product.id}`} className="previousdrops-carousel-slide1-image-container"><img width="75%" height='75%' src={product.imageUrl}/></Link>
             <div className="previousdrops-carousel-slide1-title-button-remaining-container">
               <h4>{product.name}</h4>
+
+              {product.active === true ? <button style={{cursor: 'pointer'}} onClick={() => {addToCart(product)}}>PURCHASE</button> : <button>SOLD OUT</button>}
+
               {product.active === true ? <button>PURCHASE</button> : <button>SOLD OUT</button>}
+
               <p>In Stock: {product.quantity} of 100</p>
             </div>
           </div>
