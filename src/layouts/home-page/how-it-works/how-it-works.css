@@ -32,16 +32,17 @@
   width: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
 
 .howItWorks-image-info-container2 {
   width: 300px;
+  height: 50%;
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }
@@ -53,9 +54,10 @@
 
 .howItWorks-image-info-container3 {
   width: 300px;
+  height: 50%;
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
 }

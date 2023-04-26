@@ -1,0 +1,119 @@
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 95%;
+  margin: 50px auto 0 auto;
+}
+
+.cart-product-image {
+  width: 200px;
+}
+
+.cart-product-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  width: 100px;
+  word-wrap: break-word;
+}
+
+.checkout-title {
+  display: flex;
+  color: black;
+  font-family: "Barlow";
+  letter-spacing: 5px;
+}
+
+.checkout-product-info-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: black;
+  margin-bottom: 20px;
+  font-family: "Barlow";
+}
+
+.checkout-cart-container {
+  width: 100%;
+}
+
+.checkout-input-container {
+  color: black;
+  font-family: "Barlow";
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-input-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.checkout-input-form-input {
+  background-color: #c3c3c3;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  height: 20px;
+}
+
+.checkout-submit-button {
+  height: 40px;
+  margin-bottom: 70px;
+  width: 100%;
+  background-color: #c3c3c3;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  font-size: large;
+  cursor: pointer;
+  font-family: "Barlow";
+  letter-spacing: 2px;
+  margin-top: 50px;
+}
+
+.checkout-input-label-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.credit-month-selection {
+  height: 25px;
+  background-color: #c3c3c3;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+@media (min-width: 600px) {
+  .checkout-product-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: black;
+    margin-bottom: 20px;
+    font-family: "Barlow";
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .checkout-container {
+    flex-direction: row;
+    width: 95%;
+    max-width: 1600px;
+  }
+  .checkout-cart-container {
+    width: 50%;
+  }
+  .checkout-input-container {
+    width: 50%;
+  }
+  .checkout-product-info-container {
+    width: 100%;
+  }
+}/*# sourceMappingURL=checkout.css.map */

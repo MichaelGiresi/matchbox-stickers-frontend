@@ -3,9 +3,10 @@
   flex-direction: row;
   justify-content: space-around;
   max-width: 1000px;
-  margin: 0 auto 0 auto;
+  margin: 15px auto 0 auto;
   background-color: #fff;
   font-family: "Barlow";
+  word-break: break-word;
   font-weight: 300;
 }
 

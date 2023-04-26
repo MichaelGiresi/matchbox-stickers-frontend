@@ -1,6 +1,7 @@
 .footer {
     background-image: (url(../../assets/creamTexture.jpeg));
     z-index: -1;
+    word-break: break-word;
 }
 
 .footer-container {
@@ -22,15 +23,25 @@
     width: 100%;
     max-width: 1600px;
     justify-content: space-between;
+    @media( min-width: 700px) {
+        display: flex; 
+        flex-direction: row; 
+        margin: 0 2% 0 2%;
+        width: 100%;
+        max-width: 1600px;
+        justify-content: space-around;
+    }
     @media (min-width: 1600px) {
        margin: 0 auto 0 auto;
     }
 }
 
 .footer-mbs-container {
-    margin-top: 60px;
+    margin-top: 20px;
+    align-self: center;
     @media (max-width: 600px) {
         display: none;
+        margin-top: 60px;
     }
 }
 
@@ -53,6 +64,11 @@
 .footer-social-container {
     margin-top: 60px;
     color: white;
+    display: none;
+    @media(min-width: 300px) {
+        display: flex;
+        flex-direction: column;
+     }
 }
 
 .footer-social-inner-container {
@@ -86,6 +102,12 @@
 .footer-about-container div {
     color: white;
 }
+.about-about {
+    display: none;
+    @media(min-width: 200px) {
+        display: flex;
+     }
+}
 .footer-social {
     color: white ;
     font-family: 'Allerta Stencil', sans-serif;
@@ -112,4 +134,8 @@
 
 .titles-styles {
  font-family: 'Barlow';
+ display: none;
+ @media(min-width: 150px) {
+    display: flex;
+ }
 }
