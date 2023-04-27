@@ -143,6 +143,10 @@ const Checkout = () => {
     let orderTrackingNumber: Number = parseInt(finalOrderNum)
     // console.log(orderTrackingNumber)
     
+    const urlCustomers = 'http://localhost:8080/customers'
+    const username = 'myusername';
+    const password = 'mypassword';
+    const credentials = btoa(`${username}:${password}`);
     if(cartContext?.localCartItems.length === 0) {
       toast.error("Your Cart is Empty!")
     } else {
@@ -151,14 +155,15 @@ const Checkout = () => {
 
     try {
     // Check to see if customer already exists in the database, Get array of customers
-    const urlCustomers = 'https://localhost:8080/customers'
     const optionsCustomers = {
       method: "GET", 
       headers: 
-        {"Content-Type": "application/json"},
+        {"Content-Type": "application/json",
+        "Authorization" : `Basic ${credentials}`}
       };
       const response = await fetch(urlCustomers, optionsCustomers);
       const data = await response.json();
+      console.log(data)
       const customerArray = data._embedded.customers;
       setCustomers(customerArray)
 
@@ -187,10 +192,11 @@ const Checkout = () => {
           // Post new customer to the database
           console.log("The customer does not exist, adding them to the database...")
           try{
-            await fetch('https://18.217.214.80:8080/api/customers', {
+            await fetch('http:localhost:8080/customers', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : `Basic ${credentials}`
               },
               body: JSON.stringify(newCustomer)
             }) 
@@ -207,7 +213,7 @@ const Checkout = () => {
           // Final get request to customers table to get all information on new customer.
           try {
             console.log("Getting the most up to date customer table...")
-            const urlCustomers = 'https://localhost:8080/customers'
+            const urlCustomers = 'http://localhost:8080/customers'
             const optionsCustomers = {
             method: "GET", 
             headers: 
@@ -240,7 +246,7 @@ const Checkout = () => {
 
     // Shipping GET and POST
     try {
-      const shippingAddressArrayUrl = 'https://localhost:8080/shippingAddresses'
+      const shippingAddressArrayUrl = 'http://localhost:8080/shippingAddresses'
       const shippingAddressArrayOptions = {
         method: "GET",
         headers: {"Content-Type": "application/json"}
@@ -290,7 +296,7 @@ const Checkout = () => {
 
           // POST to shipping_address table 
           try{
-            await fetch('https://localhost:8080/shippingAddress/', {
+            await fetch('http://localhost:8080/shippingAddress/', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
@@ -317,7 +323,7 @@ const Checkout = () => {
 
     // GET request of shipping table to get active shipping id
     try {
-      const urlShippingAddresses = 'https://localhost:8080/shippingAddress/'
+      const urlShippingAddresses = 'http://localhost:8080/shippingAddress/'
       const optionsShippingAddresses = {
       method: "GET", 
       headers: 
@@ -357,7 +363,7 @@ const Checkout = () => {
       
     }
     // make POST request to order table
-    await fetch('https://18.217.214.80:8080/api/orders/', {
+    await fetch('http://18.217.214.80:8080/api/orders/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -378,7 +384,7 @@ const Checkout = () => {
   }
   // Final GET request for the new order number
   try {
-    const url = 'https://18.217.214.80:8080/api/orders?size=1000'
+    const url = 'http://18.217.214.80:8080/api/orders?size=1000'
     const options = {
     method: "GET", 
     headers: 
@@ -413,7 +419,7 @@ const Checkout = () => {
       sizeId: {id: cartContext?.localCartItems[i][9]}
     }
     // console.log(newOrderItems)
-    const response = await fetch('https://18.217.214.80:8080/api/orderItems/', {
+    const response = await fetch('http://18.217.214.80:8080/api/orderItems/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -431,7 +437,7 @@ const Checkout = () => {
 }
 
 try {
-  const url = 'https://18.217.214.80:8080/api/products'
+  const url = 'http://18.217.214.80:8080/api/products'
   const options = {
     method: "GET",
     headers: {"Content-Type": 'application/json'},
@@ -467,7 +473,7 @@ for(let i = 0; i < products.length; i++) {
         try {
           const sizeMapPutRequest: string = sizeMapping[cartContext?.localCartItems[j][9]]
           // console.log(sizeMapPutRequest)
-          const url = `https://18.217.214.80:8080/api/products/${products[i].id}`
+          const url = `http://18.217.214.80:8080/api/products/${products[i].id}`
           const options = {
             method: "PUT",
             headers: {

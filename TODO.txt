@@ -16,18 +16,15 @@ MONDAY:
 
 TUESDAY:
 
-        -- Create checkout page, with item and input fields
-        -- Have submit button send requests to server, and update database
-        -- Create admin page where products can be added, deleted, and adjusted. Also include order list
+        DONE!        -- Create checkout page, with item and input fields
 
 WEDNESDAY:
 
-        -- implement okta on front end and back end
-        -- Only allow for users who have userType of admin to access admin page
-        -- create ssh keys
-        -- Deploy Database
-        -- Deploy Back End
-        -- Deploy Front End
+        -- Have submit button send requests to server, and update database
+        -- Fix all styling
+        -- Update portfolio website with new project links. Update linkedin 
+
+
 
 
 
