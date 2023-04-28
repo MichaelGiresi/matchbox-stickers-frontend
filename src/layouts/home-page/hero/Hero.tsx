@@ -73,12 +73,12 @@ const Hero = () => {
         <div className='hero-drop-info-container'>
           <div className='hero-drop-info'>
             <h1 className='hero-drop-title'>UPCOMMING DROPS:</h1>
-            <p className='hero-drop-upcomming-drop'>blah blah blah</p>
-            <p className='hero-drop-upcomming-drop' >blah blah blah</p>
-            <p className='hero-drop-upcomming-drop' >blah blah blah</p>
-            <p className='hero-drop-upcomming-drop' >blah blah blah</p>
-            <p className='hero-drop-upcomming-drop' >blah blah blah</p>
-            <p className='hero-drop-upcomming-drop' >blah blah blah</p>
+            <p className='hero-drop-upcomming-drop'>Resonance of Forgotten Time</p>
+            <p className='hero-drop-upcomming-drop' >Chromatica Dreams</p>
+            <p className='hero-drop-upcomming-drop' >Whispered Reflections</p>
+            <p className='hero-drop-upcomming-drop' >Quantum Imagination</p>
+            <p className='hero-drop-upcomming-drop' >Dance of the Ethereal Shadows</p>
+            <p className='hero-drop-upcomming-drop' >Silent Symphony of the Cosmos</p>
           </div>
           
           {/* <div className='hero-drop-info-container2'>

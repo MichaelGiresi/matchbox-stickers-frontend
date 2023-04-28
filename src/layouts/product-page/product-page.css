@@ -44,7 +44,7 @@
     height: 80vh;
   }
   .product-image {
-    width: 100%;
+    width: 80%;
   }
   .product-page-image-container {
     width: 50%;
@@ -93,7 +93,7 @@
 }
 @media (min-width: 769px) and (min-width: 1000px) {
   .product-image {
-    width: auto;
+    width: 80%;
   }
   .product-page-information-container {
     height: 70%;
