@@ -52,7 +52,7 @@
     }
 
     .product-image {
-        width: 100%;
+        width: 80%;
         
         // margin: 0 auto 0 auto;
         // align-self: flex-start;
@@ -110,7 +110,7 @@
 
     @media(min-width:1000px) {
         .product-image {
-            width: auto;
+            width: 80%;
         }
         .product-page-information-container {
             height: 70%;

@@ -14,6 +14,7 @@ import Cart from './layouts/cart/Cart';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './layouts/checkout/Checkout';
+import { useLocation } from 'react-router-dom';
 function App() {
 const [products, setProducts] = useState()
 const [cart, setCart] = useState(false)
@@ -45,6 +46,16 @@ useEffect(() => {
   localStorage.setItem('localCartItems', JSON.stringify(localCartItems));
 }, [localCartItems]);
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
   // useEffect(() => {
   //   const getProducts = async () => {
 
@@ -73,6 +84,7 @@ useEffect(() => {
   return (
     <div className='app'>
       <Router>
+        <ScrollToTop/>
       <CartContext.Provider
           value={{
             cart,
