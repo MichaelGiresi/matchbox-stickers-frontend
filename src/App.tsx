@@ -10,11 +10,11 @@ import { Routes } from 'react-router-dom';
 import ShopAll from './layouts/shop-all/ShopAll';
 import { useEffect, useState } from 'react';
 import ProductPage from './layouts/product-page/ProductPage'
-
 import Cart from './layouts/cart/Cart';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './layouts/checkout/Checkout';
+import { useLocation } from 'react-router-dom';
 function App() {
 const [products, setProducts] = useState()
 const [cart, setCart] = useState(false)
@@ -46,9 +46,15 @@ useEffect(() => {
   localStorage.setItem('localCartItems', JSON.stringify(localCartItems));
 }, [localCartItems]);
 
-=======
-function App() {
-const [products, setProducts] = useState()
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
   // useEffect(() => {
   //   const getProducts = async () => {
@@ -78,6 +84,7 @@ const [products, setProducts] = useState()
   return (
     <div className='app'>
       <Router>
+        <ScrollToTop/>
       <CartContext.Provider
           value={{
             cart,
@@ -93,16 +100,11 @@ const [products, setProducts] = useState()
         <Routes>
           <Route path="/" element={<HomePageOutput/>}/>
           <Route path={`/products/:productId`} element={<ProductPage/>}/>
-
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
         </Routes>
       <Footer/>
       </CartContext.Provider>
-=======
-        </Routes>
-      <Footer/>
-
       </Router>
       <ToastContainer />
     </div>

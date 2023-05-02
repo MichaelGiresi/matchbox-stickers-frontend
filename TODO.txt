@@ -1,5 +1,101 @@
 Main TODO list:
 
+After the IPS Job interview, the goal of this project is to continue to push, until it is 100% completed.
+
+Here is the list of features that have to be completed:
+
+        -- Authentication on the front and back end
+
+        -- Be able to create a new user in the front end using okta.
+
+        -- Admin page for users with elevated privleges 
+
+        -- Administrator Page:
+                -- see all users and their privleges
+                -- be able to delete users, drops and orders.
+                -- Be able to add orders
+                -- send emails to the users who signed up to the email alerts
+
+        -- Be able to create a certain date and time of when emails should be sent. Also, send an email when a new drop becomes active.
+
+        DONE!        -- Finish the checkout post request
+
+        -- Implement stripe for payments
+
+        -- Finish all styling
+
+
+
+
+KNOWN BUGS:
+
+
+        -- Home Page
+
+                -- Button in previous drops in hero should have a hover styling
+                -- No links in footer work
+                -- Center Upcomming Drops
+                -- Fix font in upcomming drops
+                -- check font in how it works
+
+        -- Product Page
+
+                -- 
+
+        -- Cart
+
+                -- Add titles to the name, price and description divs to display what is written.
+                -- add cursor pointer to continue to checkout button
+                -- add hover color red to remove button
+                -- Change size of product description
+                
+        -- Checkout
+
+                -- Fix styling in cart contents
+                -- cursor pointer in remove
+                -- have billing address form fields disappear if the box is checked
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 PAGES:
 
         -- HOME 
@@ -16,18 +112,15 @@ MONDAY:
 
 TUESDAY:
 
-        -- Create checkout page, with item and input fields
-        -- Have submit button send requests to server, and update database
-        -- Create admin page where products can be added, deleted, and adjusted. Also include order list
+        DONE!        -- Create checkout page, with item and input fields
 
 WEDNESDAY:
 
-        -- implement okta on front end and back end
-        -- Only allow for users who have userType of admin to access admin page
-        -- create ssh keys
-        -- Deploy Database
-        -- Deploy Back End
-        -- Deploy Front End
+        -- Have submit button send requests to server, and update database
+        -- Fix all styling
+        -- Update portfolio website with new project links. Update linkedin 
+
+
 
 
 

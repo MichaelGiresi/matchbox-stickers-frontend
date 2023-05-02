@@ -20,9 +20,6 @@ const Checkout = () => {
   const [customers, setCustomers] = useState([])
   const [shippingAddresses, setShippingAddresses] = useState([])
   let total = cartContext?.cartSubTotal
-  let totalQuantity = cartContext?.cartCount
-  let activeCustomer = []
-  const delay = (ms:any) => new Promise((resolve) => setTimeout(resolve, ms));
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -45,9 +42,9 @@ const Checkout = () => {
     expirationYear: ''
   });
 
-  useEffect(() => {
-    console.log(cartContext?.localCartItems)
-  })
+  // useEffect(() => {
+  //   console.log(cartContext?.localCartItems)
+  // })
 
   // Checkout Interface Defintions
 
@@ -56,16 +53,15 @@ const Checkout = () => {
     unitPrice: Number,
     orderId: {id: Number},
     productId: {id: Number},
-    sizeId: {id: Number}
   }
 
 
-  interface Checkout {
-    orderTrackingNumber: Number;
+interface Checkout {
+    orderTrackingNumber: number;
     totalPrice: number;
     totalQuantity: number;
-    shippingAddressId: {id: Number};
-    customer: {id: Number};
+    customer: {id: number};
+    shippingAddressId: {id: number};
     status: boolean;
 }
 
@@ -76,19 +72,12 @@ const Checkout = () => {
   }
 
   interface ShippingAddress {
-    customer: {
-      id: Number
-    },
+    customer: { id: Number },
     city: String,
     country: String,
     state: String,
     street: String,
     zipCode: String
-
-  }
-
-  interface SizeChart {
-    small: Number
   }
 
   // useEffect(() => {
@@ -140,9 +129,13 @@ const Checkout = () => {
     
     // const parseFinalOrderNumber = parseInt(finalOrderNumber, 10)
     setFinalOrderNumber(finalOrderNum)
-    let orderTrackingNumber: Number = parseInt(finalOrderNum)
+    let orderTrackingNumber: number = parseInt(finalOrderNum)
     // console.log(orderTrackingNumber)
     
+    const urlCustomers = 'http://localhost:8080/customers'
+    const username = 'myusername';
+    const password = 'mypassword';
+    const credentials = btoa(`${username}:${password}`);
     if(cartContext?.localCartItems.length === 0) {
       toast.error("Your Cart is Empty!")
     } else {
@@ -151,19 +144,20 @@ const Checkout = () => {
 
     try {
     // Check to see if customer already exists in the database, Get array of customers
-    const urlCustomers = 'https://localhost:8080/customers'
     const optionsCustomers = {
       method: "GET", 
       headers: 
-        {"Content-Type": "application/json"},
+        {"Content-Type": "application/json",
+        "Authorization" : `Basic ${credentials}`}
       };
       const response = await fetch(urlCustomers, optionsCustomers);
       const data = await response.json();
       const customerArray = data._embedded.customers;
       setCustomers(customerArray)
+      console.log(customerArray)
 
       // If form input is empty
-      if(formData.firstName == '' || formData.lastName === '' || formData.email === '') {
+      if(formData.firstName === '' || formData.lastName === '' || formData.email === '') {
         toast.error("Please Complete All Fields")
       } else {
 
@@ -176,52 +170,55 @@ const Checkout = () => {
         a = true
 
         activeCustomer = [customerArray[i].id, customerArray[i].firstName, customerArray[i].lastName, customerArray[i].email]
+        console.log(activeCustomer)
         } 
       }
         if(a) {
-          // console.log("customer already exist")
+          console.log("customer already exist")
           // toast.error("The Customer already exists")
+          
 
           
         } else {
           // Post new customer to the database
           console.log("The customer does not exist, adding them to the database...")
           try{
-            await fetch('https://18.217.214.80:8080/api/customers', {
+            await fetch('http://localhost:8080/customers', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization' : `Basic ${credentials}`
               },
               body: JSON.stringify(newCustomer)
             }) 
             toast.success("New Customer Added")
-            // console.log("New Customer Added!")
+            console.log("New Customer Added!")
             setCustomers([...customerArray, newCustomer])
             
           }
           catch{
             toast.error("The Customer wasn't added")
-            // console.log("New Customer Not added")
+            console.log("New Customer Not added")
           }
           
           // Final get request to customers table to get all information on new customer.
           try {
             console.log("Getting the most up to date customer table...")
-            const urlCustomers = 'https://localhost:8080/customers'
+            const urlCustomers = 'http://localhost:8080/customers'
             const optionsCustomers = {
             method: "GET", 
             headers: 
-              {"Content-Type": "application/json"},
+              {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
             };
             const response = await fetch(urlCustomers, optionsCustomers);
             const data = await response.json();
             const customerArray = data._embedded.customers;
-            // console.log(customerArray)
+            console.log(customerArray)
             for(let i = 0; i < customerArray.length; i++) {
               if(customerArray[i].firstName === formData.firstName && customerArray[i].lastName === formData.lastName && customerArray[i].email === formData.email) {
 
                 activeCustomer = [customerArray[i].id, customerArray[i].firstName, customerArray[i].lastName, customerArray[i].email]
-                // console.log(`The active customer has been found!`)
+                console.log(`The active customer has been found!`)
                 } 
             }
           }
@@ -240,15 +237,15 @@ const Checkout = () => {
 
     // Shipping GET and POST
     try {
-      const shippingAddressArrayUrl = 'https://localhost:8080/shippingAddresses'
+      const shippingAddressArrayUrl = 'http://localhost:8080/shippingAddresses'
       const shippingAddressArrayOptions = {
         method: "GET",
-        headers: {"Content-Type": "application/json"}
+        headers: {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`}
       }
       const response = await fetch(shippingAddressArrayUrl, shippingAddressArrayOptions)
       const data = await response.json();
       const shippingAddressArray = data._embedded.shippingAddresses
-      // console.log(shippingAddressArray)
+      console.log(shippingAddressArray)
       setShippingAddresses(shippingAddressArray)
       
 
@@ -256,18 +253,19 @@ const Checkout = () => {
       if (formData.shippingStreet ==='' || formData.shippingCity === '' || formData.shippingState === '' || formData.shippingCountry === '' || formData.shippingZipCode === '') {
         toast.error("Please enter all shipping address information")
       } else {
-        // console.log(`The active customer id is ${activeCustomer[0]}`)
+        console.log(`The active customer id is ${activeCustomer[0]}`)
         // check if shipping information entered in the inputs already exists on the database
         let a = false
         for (let i = 0; i < shippingAddressArray.length; i++) {
 
-          if(shippingAddressArray[i].city == formData.shippingCity && 
-            shippingAddressArray[i].country == formData.shippingCountry && 
-            shippingAddressArray[i].state == formData.shippingState &&
-            shippingAddressArray[i].street == formData.shippingStreet &&
-            shippingAddressArray[i].zipCode == formData.shippingZipCode &&
-            shippingAddressArray[i].id == activeCustomer[0]) {
+          if(shippingAddressArray[i].city === formData.shippingCity && 
+            shippingAddressArray[i].country === formData.shippingCountry && 
+            shippingAddressArray[i].state === formData.shippingState &&
+            shippingAddressArray[i].street === formData.shippingStreet &&
+            shippingAddressArray[i].zipCode === formData.shippingZipCode &&
+            shippingAddressArray[i].customerId === activeCustomer[0]) {
               a = true
+              
             }
 
         }
@@ -276,7 +274,7 @@ const Checkout = () => {
 
         // if the shipping address does not exist in the shipping_address table
         if(!a) {
-          
+          console.log('The shipping address didnt exist, adding it to the database..')
           const newShippingAddress: ShippingAddress = {
     
             city: formData.shippingCity,
@@ -290,10 +288,10 @@ const Checkout = () => {
 
           // POST to shipping_address table 
           try{
-            await fetch('https://localhost:8080/shippingAddress/', {
+            await fetch('http://localhost:8080/api/shipping_addresses', {
               method: 'POST',
               headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json', "Authorization" : `Basic ${credentials}`
               },
               body: JSON.stringify(newShippingAddress)
             }) 
@@ -307,7 +305,7 @@ const Checkout = () => {
             console.log(error)
           }
         } else {
-          // console.log('The Shipping address and customer id already exist')
+          console.log('The Shipping address and customer id already exist')
         }
       }
     }
@@ -317,11 +315,11 @@ const Checkout = () => {
 
     // GET request of shipping table to get active shipping id
     try {
-      const urlShippingAddresses = 'https://localhost:8080/shippingAddress/'
+      const urlShippingAddresses = 'http://localhost:8080/api/shipping_addresses'
       const optionsShippingAddresses = {
       method: "GET", 
       headers: 
-        {"Content-Type": "application/json"},
+        {"Content-Type": "application/json", "Authorization": `Basic ${credentials}`},
       };
       const response = await fetch(urlShippingAddresses, optionsShippingAddresses);
       const data = await response.json();
@@ -356,11 +354,17 @@ const Checkout = () => {
 
       
     }
+    console.log(activeShippingAddressId)
+    console.log(orderTrackingNumber)
+    console.log(total)
+    console.log(activeCustomer[0])
+    console.log(cartContext?.cartCount)
+
     // make POST request to order table
-    await fetch('https://18.217.214.80:8080/api/orders/', {
+    await fetch('http://localhost:8080/api/orders', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json', 'Authorization': `Basic ${credentials}`
       },
       body: JSON.stringify(newCheckout)
     })
@@ -368,8 +372,8 @@ const Checkout = () => {
       if(response.status === 200) {
         toast.success("Your Order Has Been Received!")
       }
-      // console.log("Response Status: ", response.status)
-      // console.log("Response Status Text: ", response.statusText)
+      console.log("Response Status: ", response.status)
+      console.log("Response Status Text: ", response.statusText)
     })
   } 
   catch (error){
@@ -378,15 +382,15 @@ const Checkout = () => {
   }
   // Final GET request for the new order number
   try {
-    const url = 'https://18.217.214.80:8080/api/orders?size=1000'
+    const url = 'http://localhost:8080/api/orders?size=1000'
     const options = {
     method: "GET", 
     headers: 
-      {"Content-Type": "application/json"},
+      {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
     };
     const response = await fetch(url, options);
     const data = await response.json();
-    const orders = data._embedded.orders
+    const orders = data
     // console.log(orders)
     // console.log(orderTrackingNumber)
     for(let i = 0; i < orders.length; i++) {
@@ -394,7 +398,7 @@ const Checkout = () => {
 
         // activeOrderNumber = orders[i].orderTrackingNumber
         activeOrderId = orders[i].id
-        // console.log(`This is the active order id = ${activeOrderId}`)
+        console.log(`This is the active order id = ${activeOrderId}`)
         } 
     }
     
@@ -405,18 +409,19 @@ const Checkout = () => {
 
   for(let i = 0; i < cartContext?.localCartItems.length; i++ ) {
     try{
+      console.log(cartContext?.localCartItems)
       const newOrderItems: OrderItems = {
-        quantity: cartContext?.localCartItems[i][4],
-        unitPrice: cartContext?.localCartItems[i][5],
+        quantity: 1,
+        unitPrice: cartContext?.localCartItems[i].unitPrice,
         orderId: {id: activeOrderId},
-        productId: {id: cartContext?.localCartItems[i][0]},
-      sizeId: {id: cartContext?.localCartItems[i][9]}
+        productId: {id: cartContext?.localCartItems[i].id}
     }
     // console.log(newOrderItems)
-    const response = await fetch('https://18.217.214.80:8080/api/orderItems/', {
+    const response = await fetch('http://localhost:8080/api/order-items', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorization' : `Basic ${credentials}`
       },
       body: JSON.stringify(newOrderItems)
     });
@@ -431,23 +436,23 @@ const Checkout = () => {
 }
 
 try {
-  const url = 'https://18.217.214.80:8080/api/products'
+  const url = 'http://localhost:8080/products'
   const options = {
     method: "GET",
-    headers: {"Content-Type": 'application/json'},
+    headers: {"Content-Type": 'application/json', 'Authorization' : `Basic ${credentials}`},
   };
   const response = await fetch(url, options);
   const data = await response.json();
   const products = data._embedded.products
-  // console.log("Here is the list of products from the checkout button")
-  // console.log(products)
-  const sizeMapping = {
-    1: "sizeSmall",
-    2: "sizeMedium",
-    3: "sizeLarge",
-    4: "sizeExtraLarge",
-    5: "sizeExtraExtraLarge"
-}
+  console.log("Here is the list of products from the checkout button")
+  console.log(products)
+//   const sizeMapping = {
+//     1: "sizeSmall",
+//     2: "sizeMedium",
+//     3: "sizeLarge",
+//     4: "sizeExtraLarge",
+//     5: "sizeExtraExtraLarge"
+// }
 
 // If the product id from the get request, and the product id from the 
 // current local cart items elemet in the array equal, then we want to create
@@ -455,31 +460,33 @@ try {
 // Subtract the quanity from the value in the field of products[i].sizeMapping[cartContext?.localcartItems[j][9]]
 for(let i = 0; i < products.length; i++) {
   for(let j = 0; j < cartContext?.localCartItems.length; j++){
-    if(products[i].id === cartContext?.localCartItems[j][0]) {
-        const size = sizeMapping[cartContext?.localCartItems[j][9]]
-        const quantity = cartContext?.localCartItems[j][4]
-        const productSize = products[i][size]
+    if(products[i].id === cartContext?.localCartItems[j].id) {
+        // const size = sizeMapping[cartContext?.localCartItems[j][9]]
+        const quantity = cartContext?.localCartItems[j].quantity
+        console.log(quantity)
+        // const productSize = products[i][size]
         // console.log(size)
         // console.log(productSize)
-        const total = productSize - quantity
-        // console.log(total)
-
+        const total = products[i].quantity - 1
+        console.log(`This is the total quantity to be subtracted from the current total ${total}`)
+      console.log(`This is the product id that will be updated ${products[i].id}`)
         try {
-          const sizeMapPutRequest: string = sizeMapping[cartContext?.localCartItems[j][9]]
+          // const sizeMapPutRequest: string = sizeMapping[cartContext?.localCartItems[j][9]]
           // console.log(sizeMapPutRequest)
-          const url = `https://18.217.214.80:8080/api/products/${products[i].id}`
+          const url = `http://localhost:8080/products/${products[i].id}`
           const options = {
             method: "PUT",
             headers: {
-              "Content-Type": "application/json"
+              "Content-Type": "application/json",
+              "Authorization" : `Basic ${credentials}`
             },
-            body: JSON.stringify({[sizeMapPutRequest]: total})
+            body: JSON.stringify({"quantity": total})
           };
           const response = await fetch(url, options);
           if (response.status === 200) {
             
-            // console.log("Successfully updated the quantity")
-            // console.log(response.status)
+            console.log("Successfully updated the quantity")
+            console.log(response.status)
           } else {
             console.error("Failed to update the quantity")
           }

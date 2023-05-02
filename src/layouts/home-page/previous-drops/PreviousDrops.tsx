@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react'
 import './previous-drops.css'
 import { Product } from '../../../models/Product'
@@ -7,25 +6,14 @@ import { CartContext } from '../../../contexts/CartContext';
 import {toast} from 'react-toastify'
 const PreviousDrops = () => {
   const cartContext = useContext(CartContext)
-
-import React, { useEffect, useState } from 'react'
-import './previous-drops.css'
-import { Product } from '../../../models/Product'
-import { Link } from 'react-router-dom';
-
-const PreviousDrops = () => {
-
   const [previousDrops, setPreviousDrops] = useState<Product[] | undefined>();
   const [numContainers, setNumContainers] = useState(3)
   const [currentIndex, setCurrentIndex] = useState(0)
   const progressPercentage = (currentIndex / ((previousDrops?.length || 1) - numContainers)) * 100;
   
-
 useEffect(() => {
   // console.log(cartContext?.cartCount)
 }, [cartContext?.cartCount])
-
-
 
 
   useEffect(() => {
@@ -96,7 +84,6 @@ useEffect(() => {
     });
   };
 
-
   const addProductToCart = (product: Product) => {
     // Update the localCartItems array
     cartContext?.setLocalCartItems((prevItems) => [...prevItems, product]);
@@ -156,11 +143,7 @@ useEffect(() => {
             <Link to={`/products/${product.id}`} className="previousdrops-carousel-slide1-image-container"><img width="75%" height='75%' src={product.imageUrl}/></Link>
             <div className="previousdrops-carousel-slide1-title-button-remaining-container">
               <h4>{product.name}</h4>
-
               {product.active === true ? <button style={{cursor: 'pointer'}} onClick={() => {addToCart(product)}}>PURCHASE</button> : <button>SOLD OUT</button>}
-
-              {product.active === true ? <button>PURCHASE</button> : <button>SOLD OUT</button>}
-
               <p>In Stock: {product.quantity} of 100</p>
             </div>
           </div>
