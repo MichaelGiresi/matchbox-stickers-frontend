@@ -143,7 +143,7 @@ useEffect(() => {
             <Link to={`/products/${product.id}`} className="previousdrops-carousel-slide1-image-container"><img width="75%" height='75%' src={product.imageUrl}/></Link>
             <div className="previousdrops-carousel-slide1-title-button-remaining-container">
               <h4>{product.name}</h4>
-              {product.active === true ? <button style={{cursor: 'pointer'}} onClick={() => {addToCart(product)}}>PURCHASE</button> : <button>SOLD OUT</button>}
+              {product.active === true ? <button style={{cursor: 'pointer'}} onClick={() => {addToCart(product)}}>ADD TO CART</button> : <button>SOLD OUT</button>}
               <p>In Stock: {product.quantity} of 100</p>
             </div>
           </div>
