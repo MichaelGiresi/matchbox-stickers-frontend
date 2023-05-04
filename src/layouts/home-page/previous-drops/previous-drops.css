@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
   margin-bottom: 150px;
 }
 
@@ -13,7 +14,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 150px;
 }
 
 .previousdrops-text-container h4 {
@@ -28,8 +29,8 @@
 }
 
 .previousdrops-carousel {
-  width: 82%;
-  height: 700px;
+  width: 95%;
+  max-width: 1600px;
 }
 
 .previousdrops-carousel-nav-container {
@@ -38,6 +39,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (min-width: 769px) {
+  .previousdrops-carousel-nav-container {
+    width: 99%;
+  }
 }
 
 .previousdrops-carousel-nav-line-container {
@@ -50,25 +56,36 @@
 
 .previousdrops-carousel-slides-container {
   width: 100%;
-  height: 80%;
   display: flex;
   justify-content: space-between;
 }
 
 .previousdrops-carousel-slide1-container {
-  width: 32%;
+  width: 100%;
   height: 100%;
   background-color: white;
   display: flex;
   flex-direction: column;
   border-radius: 15px;
 }
+@media (min-width: 769px) {
+  .previousdrops-carousel-slide1-container {
+    align-items: center;
+  }
+}
 
 .previousdrops-carousel-slide1-image-container {
   background-color: rgba(230, 215, 176, 0.35);
   width: 100%;
-  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
+}
+@media (min-width: 769px) {
+  .previousdrops-carousel-slide1-image-container {
+    width: 95%;
+  }
 }
 
 .previousdrops-carousel-slide2-container {
@@ -132,6 +149,12 @@
   display: flex;
   justify-content: right;
   height: 44%;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .previousdrops-carousel-nav-button-container {
+    justify-content: right;
+  }
 }
 
 #previousdrops-carousel-nav-button-left {
@@ -167,7 +190,6 @@
 }
 
 .previousdrops-carousel-nav-progress-line {
-  width: 13%;
   height: 8px;
   background-color: black;
   position: absolute;
@@ -178,6 +200,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .previousdrops-carousel-slide3-title-button-remaining-container {
@@ -188,10 +211,17 @@
 }
 
 .previousdrops-carousel-slide1-title-button-remaining-container button {
-  width: 55%;
+  width: 86%;
   height: 50px;
   border-radius: 8px;
   border-width: 0px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #000;
+  transition: 0.5s;
+}
+
+.previousdrops-carousel-slide1-title-button-remaining-container button:hover {
+  background-color: black;
+  color: #e6d7b0;
+  transition: 0.5s;
 }/*# sourceMappingURL=previous-drops.css.map */

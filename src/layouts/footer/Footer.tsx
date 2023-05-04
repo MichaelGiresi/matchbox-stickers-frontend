@@ -12,7 +12,7 @@ const Footer = () => {
     <div className='footer'>
       <div className='footer-container'>
         <div className='footer-inner-container'>
-          <div className='footer-mbs-container'><img className='footer-mbs' src={mbsSmall}/></div>
+          {/* <div className='footer-mbs-container'><img className='footer-mbs' src={mbsSmall}/></div> */}
           <div className='footer-shop-container'>
             <div className='shop-title'>SHOP</div>
             <div className="titles-styles" >Drops</div>

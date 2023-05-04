@@ -53,16 +53,6 @@ const Hero = () => {
       <div className="hero-container">
         <div className='hero-video-buttons-container'>
           <div className='hero-buttons-video-container'>
-            {/* <div className='hero-button-container'>
-              <div className='hero-button-container-2'>
-                <button id='btn1' className='hero-button-1 ' onClick={setHeroButtonTime(0)}></button>
-                <button id='btn2' className='hero-button-2' onClick={setHeroButtonTime(50)} ></button>
-                <button id="btn3" className='hero-button-3' onClick={setHeroButtonTime(100)}></button>
-                <button id="btn4" className='hero-button-4' onClick={setHeroButtonTime(150)}></button>
-                <button id="btn5" className='hero-button-5' onClick={setHeroButtonTime(200)}></button>
-                <button id="btn6" className='hero-button-6' onClick={setHeroButtonTime(250)}></button>
-              </div>
-            </div> */}
             <div className='hero-video-container'>
               <video 
                 className="video"
@@ -81,7 +71,17 @@ const Hero = () => {
           </div>
         </div>
         <div className='hero-drop-info-container'>
-          <div className='hero-drop-info-container2'>
+          <div className='hero-drop-info'>
+            <h1 className='hero-drop-title'>UPCOMMING DROPS:</h1>
+            <p className='hero-drop-upcomming-drop'>Resonance of Forgotten Time</p>
+            <p className='hero-drop-upcomming-drop' >Chromatica Dreams</p>
+            <p className='hero-drop-upcomming-drop' >Whispered Reflections</p>
+            <p className='hero-drop-upcomming-drop' >Quantum Imagination</p>
+            <p className='hero-drop-upcomming-drop' >Dance of the Ethereal Shadows</p>
+            <p className='hero-drop-upcomming-drop' >Silent Symphony of the Cosmos</p>
+          </div>
+          
+          {/* <div className='hero-drop-info-container2'>
             <div className='hero-drop-into-title'>DROP #1</div>
             <h1 className='hero-drop-title'>WHATEVER WEATHER</h1>
             <p id='hero-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -91,16 +91,16 @@ const Hero = () => {
               <div id="remainingProgressBar"></div>
               <div id="remainingProgressBarStatus"></div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className='hero-bottom'>
+      {/* <div className='hero-bottom'>
         <div className="countdown">
           <h6 id="countdown__nextDrop">NEXT DROP</h6>
           <h5 id="countdown__dropTitle">CLASSIC<br/> CARS</h5>
           <h5 id="countdown__timeRemaining">JULY 1<sup className='sup'>ST</sup></h5>
         </div>
-      </div>
+      </div> */}
     </div>
 
   )

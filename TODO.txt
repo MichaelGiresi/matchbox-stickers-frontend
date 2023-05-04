@@ -1,14 +1,138 @@
 Main TODO list:
 
+After the IPS Job interview, the goal of this project is to continue to push, until it is 100% completed.
+
+Here is the list of features that have to be completed:
+
+        -- Authentication on the front and back end
+
+        -- Be able to create a new user in the front end using okta.
+
+        -- Admin page for users with elevated privleges 
+
+        -- Administrator Page:
+                -- see all users and their privleges
+                -- be able to delete users, drops and orders.
+                -- Be able to add orders
+                -- send emails to the users who signed up to the email alerts
+
+        -- Be able to create a certain date and time of when emails should be sent. Also, send an email when a new drop becomes active.
+
+        DONE!        -- Finish the checkout post request
+
+        -- Implement stripe for payments
+
+        -- Finish all styling
+
+
+
+
+KNOWN BUGS:
+
+
+        -- Home Page
+
+                -- Button in previous drops in hero should have a hover styling
+                -- No links in footer work
+                -- Center Upcomming Drops
+                -- Fix font in upcomming drops
+                -- check font in how it works
+
+        -- Product Page
+
+                -- 
+
+        -- Cart
+
+                -- Add titles to the name, price and description divs to display what is written.
+                -- add cursor pointer to continue to checkout button
+                -- add hover color red to remove button
+                -- Change size of product description
+                
+        -- Checkout
+
+                -- Fix styling in cart contents
+                -- cursor pointer in remove
+                -- have billing address form fields disappear if the box is checked
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PAGES:
+
+        -- HOME 
+        -- SHOP ALL
+        -- PRODUCT
+        -- ADMIN
+
+Completion:
+        MANDATORY TO BE COMPLETED BY THURSDAY:
+
+MONDAY:
+        DONE!        -- Finish all styles for home page
+        DONE!        -- Make product page. Have each product have its own product page
+
+TUESDAY:
+
+        DONE!        -- Create checkout page, with item and input fields
+
+WEDNESDAY:
+
+        -- Have submit button send requests to server, and update database
+        -- Fix all styling
+        -- Update portfolio website with new project links. Update linkedin 
+
+
+
+
+
+
 Sunday:
 
         DONE!        -- Get 10 product images
         DONE!        -- Upload images
-        -- Create Products inside of Database
-        -- Create controller for communication between database and React
-        -- Fix styling in Nav
+        DONE!        -- Create Products inside of Database
+        DONE!        -- Fix styling in Nav
         -- Fix styling in Footer
-        -- Fix styling in Hero
+        DONE!        -- Fix styling in Hero
 
 
 Converting JS to TS:

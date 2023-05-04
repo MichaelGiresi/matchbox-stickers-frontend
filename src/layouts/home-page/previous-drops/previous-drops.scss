@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
     margin-bottom: 150px;
 }
 
@@ -15,7 +16,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-bottom: 200px;
+margin-bottom: 150px;
 
 }
 
@@ -32,8 +33,9 @@ margin-bottom: 200px;
 
 .previousdrops-carousel {
     // background-color: red;
-    width: 82%;
-    height: 700px;
+    width: 95%;
+    // height: 700px;
+    max-width: 1600px;
 }
 
 .previousdrops-carousel-nav-container {
@@ -44,6 +46,9 @@ margin-bottom: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media(min-width: 769px) {
+        width: 99%;
+    }
 }
 
 .previousdrops-carousel-nav-line-container{
@@ -60,27 +65,36 @@ margin-bottom: 200px;
 .previousdrops-carousel-slides-container {
     // background-color: w;
     width: 100%;
-    height: 80%;
+    // height: 80%;
     display: flex;
     justify-content: space-between;
     
 }
 
 .previousdrops-carousel-slide1-container {
-    width: 32%;
+    width: 100%;
     height: 100%;
     background-color: white;
     display: flex;
     flex-direction: column;
     border-radius: 15px;
+    @media(min-width: 769px) {
+        align-items: center;
+    }
 }
 
 // CAROUSEL SLIDE ONE
 .previousdrops-carousel-slide1-image-container{
     background-color: rgba(230, 215, 176, .35);
     width: 100%;
-    height: 65%;
+    // height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 15px;
+    @media(min-width: 769px) {
+        width: 95%;
+    }
 }
 .previousdrops-carousel-slide2-container {
     width: 32%;
@@ -143,7 +157,11 @@ margin-bottom: 200px;
     justify-content: right;
     // width: 200px;
     height: 44%;
+    justify-content: space-between;
     // border: 1px black solid;
+    @media(min-width: 768px) {
+        justify-content: right;
+    }
 }
 
 #previousdrops-carousel-nav-button-left {
@@ -180,7 +198,7 @@ margin-bottom: 200px;
     
 }
 .previousdrops-carousel-nav-progress-line {
-    width: 13%;
+    // width: 13%;
     height: 8px;
     background-color: black;
     position: absolute;
@@ -191,6 +209,7 @@ margin-bottom: 200px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .previousdrops-carousel-slide3-title-button-remaining-container {
@@ -201,10 +220,17 @@ margin-bottom: 200px;
 }
 
 .previousdrops-carousel-slide1-title-button-remaining-container button {
-    width: 55%;
+    width: 86%;
     height: 50px;
     border-radius: 8px;
     border-width: 0px;
     background-color: rgba(0, 0, 0, .2);
     color: #000;
+    transition: .5s;
+}
+
+.previousdrops-carousel-slide1-title-button-remaining-container button:hover {
+    background-color: black;
+    color: #e6d7b0;
+    transition: .5s;
 }
