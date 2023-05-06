@@ -226,4 +226,11 @@ margin-bottom: 150px;
     border-width: 0px;
     background-color: rgba(0, 0, 0, .2);
     color: #000;
+    transition: .5s;
+}
+
+.previousdrops-carousel-slide1-title-button-remaining-container button:hover {
+    background-color: black;
+    color: #e6d7b0;
+    transition: .5s;
 }
