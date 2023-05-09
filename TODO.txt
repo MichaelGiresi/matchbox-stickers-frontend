@@ -32,7 +32,7 @@ KNOWN BUGS:
 
         -- Home Page
 
-                -- Button in previous drops in hero should have a hover styling
+        DONE!        -- Button in previous drops in hero should have a hover styling
                 -- No links in footer work
                 -- Center Upcomming Drops
                 -- Fix font in upcomming drops
