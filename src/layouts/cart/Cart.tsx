@@ -54,7 +54,7 @@ const Cart = () => {
                 <div className='cart-unitPrice-description-container'>
 
                 <h2 style={{alignSelf:'center'}}>${product.unitPrice}</h2>
-                <h4 style={{alignSelf:'center'}}>{product.description}</h4>
+                <h4 style={{alignSelf:'center', fontFamily: "Barlow"}}>{product.description}</h4>
                 </div>
                 <button onClick={() => {removeProduct(product.id)}} className='cart-remove-button'>REMOVE</button>
               </div>
