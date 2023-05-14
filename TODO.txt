@@ -34,20 +34,16 @@ KNOWN BUGS:
 
         DONE!        -- Button in previous drops in hero should have a hover styling
                 -- No links in footer work
-                -- Center Upcomming Drops
-                -- Fix font in upcomming drops
+        DONE!        -- Center Upcomming Drops
+        DONE!        -- Fix font in upcomming drops
                 -- check font in how it works
-
-        -- Product Page
-
-                -- 
 
         -- Cart
 
                 -- Add titles to the name, price and description divs to display what is written.
                 -- add cursor pointer to continue to checkout button
                 -- add hover color red to remove button
-                -- Change size of product description
+        DONE!        -- Change size of product description
                 
         -- Checkout
 
