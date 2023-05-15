@@ -36,7 +36,7 @@ KNOWN BUGS:
                 -- No links in footer work
         DONE!        -- Center Upcomming Drops
         DONE!        -- Fix font in upcomming drops
-                -- check font in how it works
+        DONE!        -- check font in how it works
 
         -- Cart
 
