@@ -14,6 +14,8 @@ New TODO List on May 15th, 2023
                 -- Be able to add orders
                 -- send emails to the users who signed up to the email alerts
 
+        -- Elevated Admin privleges for content creators
+
         -- Be able to create a certain date and time of when emails should be sent. Also, send an email when a new drop becomes active.
 
         -- Implement stripe for payments
