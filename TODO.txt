@@ -1,3 +1,39 @@
+
+New TODO List on May 15th, 2023
+
+
+        -- Authentication on the front and back end
+
+        -- Be able to create a new user in the front end using okta.
+
+        -- Admin page for users with elevated privleges 
+
+        -- Administrator Page:
+                -- see all users and their privleges
+                -- be able to delete users, drops and orders.
+                -- Be able to add orders
+                -- send emails to the users who signed up to the email alerts
+
+        -- Elevated Admin privleges for content creators
+
+        -- Be able to create a certain date and time of when emails should be sent. Also, send an email when a new drop becomes active.
+
+        -- Implement stripe for payments
+
+        -- Finish styling for cart
+
+
+BUGS 
+        -- Check Fonts on HomePage
+        -- Check Fonts on Product Page
+        -- Check Fonts on Cart
+        -- Check Fonts on Checkout
+        -- Nav carousel can be seen in front of hamburger menu
+        -- Cart in hamburger menu has decoration on text
+        -- upcomming drops in hero should be centered on mobile
+
+
+
 Main TODO list:
 
 After the IPS Job interview, the goal of this project is to continue to push, until it is 100% completed.
@@ -32,22 +68,18 @@ KNOWN BUGS:
 
         -- Home Page
 
-                -- Button in previous drops in hero should have a hover styling
+        DONE!        -- Button in previous drops in hero should have a hover styling
                 -- No links in footer work
-                -- Center Upcomming Drops
-                -- Fix font in upcomming drops
-                -- check font in how it works
-
-        -- Product Page
-
-                -- 
+        DONE!        -- Center Upcomming Drops
+        DONE!        -- Fix font in upcomming drops
+        DONE!        -- check font in how it works
 
         -- Cart
 
                 -- Add titles to the name, price and description divs to display what is written.
                 -- add cursor pointer to continue to checkout button
                 -- add hover color red to remove button
-                -- Change size of product description
+        DONE!        -- Change size of product description
                 
         -- Checkout
 
