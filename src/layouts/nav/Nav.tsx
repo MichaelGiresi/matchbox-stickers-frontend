@@ -53,7 +53,7 @@ const Nav = () => {
       <FontAwesomeIcon onClick={toggleMenu} className='hamburger-nav-icon' style={{marginRight: "15px", marginTop: "10px"}} size='3x' icon={faBars}/>
         </div>
         <div className='hamburger-menu-icons' onClick={mobileAboutPage}>ABOUT PAGE</div>
-        <Link to={'/cart'} className='hamburger-menu-icons'>CART ({cartContext?.cartCount})</Link>
+        <Link to={'/cart'} onClick={toggleMenu}  className='hamburger-menu-icons'>CART ({cartContext?.cartCount})</Link>
       </div>
       </nav>
       <div onClick={toggleAboutOverlay} className={`aboutOverlay ${aboutOverlayVisible ? 'active' : ''}`}>

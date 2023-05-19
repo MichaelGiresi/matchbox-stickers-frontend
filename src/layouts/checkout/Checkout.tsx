@@ -80,10 +80,6 @@ interface Checkout {
     zipCode: String
   }
 
-  // useEffect(() => {
-  //   console.log(cartContext?.localCartItems)
-  // })
-
 
 // Checkout Interface Declarations
  const newCustomer: Customer = {
