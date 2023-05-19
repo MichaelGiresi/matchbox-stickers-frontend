@@ -191,7 +191,7 @@
     width: 100%;
     height: 100%;
     background-image: (url(../../assets/creamTexture.jpeg));
-    z-index: 2;
+    z-index: 12;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
@@ -212,7 +212,9 @@
     // border-right: 3px black solid;
     border-bottom: 3px black solid;
     text-align: center;
+    color: black;
     display: flex;
+    text-decoration: none;
     justify-content: center;
     align-items: center;
     font-family: 'Barlow';
