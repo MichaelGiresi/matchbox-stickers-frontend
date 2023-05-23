@@ -24,13 +24,13 @@ New TODO List on May 15th, 2023
 
 
 BUGS 
-        -- Check Fonts on HomePage
+        DONE!        -- Check Fonts on HomePage
         -- Check Fonts on Product Page
-        -- Check Fonts on Cart
+        DONE!        -- Check Fonts on Cart
         -- Check Fonts on Checkout
-        -- Nav carousel can be seen in front of hamburger menu
-        -- Cart in hamburger menu has decoration on text
-        -- upcomming drops in hero should be centered on mobile
+        DONE!        -- Nav carousel can be seen in front of hamburger menu
+        DONE!        -- Cart in hamburger menu has decoration on text
+        DONE!        -- upcomming drops in hero should be centered on mobile
 
 
 
