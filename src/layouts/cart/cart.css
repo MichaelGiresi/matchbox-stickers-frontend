@@ -8,12 +8,16 @@
 
 .cart-products {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 15px;
+  width: 98%;
+  margin: 0 auto 15px auto;
 }
 
 .cart-remove-button {
   font-family: "Barlow";
+  cursor: pointer;
 }
 
 .cart-checkout-button {
@@ -21,10 +25,12 @@
   width: 100%;
   margin: 0 auto;
   height: 40px;
+  cursor: pointer;
 }
 
 .cart-imageUrl-name-container {
   display: flex;
+  flex-direction: column;
   width: 35%;
   justify-content: space-between;
 }
@@ -33,4 +39,10 @@
   display: flex;
   width: 30%;
   justify-content: space-between;
+}
+
+@media (min-width: 426px) {
+  .cart-products {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=cart.css.map */
