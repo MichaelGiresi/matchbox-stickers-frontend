@@ -1,3 +1,5 @@
+
+
 .cart-container {
  max-width: 1575px;
  margin: 0 auto;
@@ -10,16 +12,20 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    width: 98%;
+    margin: 0 auto 15px auto;
 }
 
 .cart-remove-button {
     font-family: "Barlow";
+    cursor: pointer;
 }
 .cart-checkout-button {
     font-family: "Barlow";
     width: 100%;
     margin: 0 auto;
     height: 40px;
+    cursor: pointer;
 }
 
 .cart-imageUrl-name-container {

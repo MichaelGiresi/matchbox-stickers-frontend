@@ -43,7 +43,7 @@ const Cart = () => {
   return (
     <div className='cart'>
       <div className='cart-container'>
-        <h1 style={{alignSelf: 'center', marginBottom: '50px'}}>Cart Contents</h1>
+        <h1 style={{alignSelf: 'center', marginBottom: '50px', fontFamily: 'Allerta Stencil'}}>Cart Contents</h1>
           {cartContext?.localCartItems.map((product, index) => {
             return (
               <div className='cart-products'>
