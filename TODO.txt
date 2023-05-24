@@ -22,6 +22,8 @@ New TODO List on May 15th, 2023
 
         -- Finish styling for cart
 
+        -- Finish styling for Product Page
+
 
 BUGS 
         DONE!        -- Check Fonts on HomePage
