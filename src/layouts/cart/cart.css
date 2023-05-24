@@ -8,6 +8,7 @@
 
 .cart-products {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 15px;
   width: 98%;
@@ -29,6 +30,7 @@
 
 .cart-imageUrl-name-container {
   display: flex;
+  flex-direction: column;
   width: 35%;
   justify-content: space-between;
 }
@@ -37,4 +39,14 @@
   display: flex;
   width: 30%;
   justify-content: space-between;
+}
+
+.cart-product-remove-button {
+  font-family: "Allerta Stencil";
+}
+
+@media (min-width: 426px) {
+  .cart-products {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=cart.css.map */

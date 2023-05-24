@@ -628,7 +628,7 @@ for(let i = 0; i < products.length; i++) {
               <input className='checkout-input-form-input' type="email" name="email" value={formData.email} onChange={handleChange}/>
             </label>
           </form>
-          <h3>Shipping Information:</h3>
+          <h3 style={{fontFamily: 'Allerta Stencil'}}>Shipping Information:</h3>
           <form className='checkout-input-form'>
             <label className='checkout-input-label'>
               Street:
@@ -651,7 +651,7 @@ for(let i = 0; i < products.length; i++) {
               <input className='checkout-input-form-input' type="text" name="shippingZipCode" value={formData.shippingZipCode} onChange={handleChange}/>
             </label>
           </form>
-          <h3>Billing Address:</h3>
+          <h3 style={{fontFamily: 'Allerta Stencil'}}>Billing Address:</h3>
           <form className='checkout-input-form'>
           <label className='checkout-input-label-checkbox'>
               <input className='checkout-input-form-input-checkbox' onChange={handleChange} type="checkbox" name="billingCheckBox"/>
@@ -678,7 +678,7 @@ for(let i = 0; i < products.length; i++) {
               <input className='checkout-input-form-input' type="text" name="billingZipCode" value={formData.billingZipCode} onChange={handleChange}/>
             </label>
           </form>
-          <h3>Credit Card Information:</h3>
+          <h3 style={{fontFamily: 'Allerta Stencil'}}>Credit Card Information:</h3>
           <form className='checkout-input-form'>
             <label className='checkout-input-label'>
               Full name on card:
