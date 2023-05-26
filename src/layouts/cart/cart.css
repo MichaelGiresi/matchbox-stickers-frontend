@@ -44,9 +44,11 @@
   font-family: "Allerta Stencil";
 }
 
+
 .cart-image {
   align-self: center;
 }
+
 
 @media (min-width: 426px) {
   .cart-products {
