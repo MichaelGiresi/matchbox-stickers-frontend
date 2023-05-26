@@ -48,7 +48,11 @@ const Cart = () => {
             return (
               <div className='cart-products'>
                 <div className='cart-imageUrl-name-container'>
+
+                  <img className='cart-image' width='200px' src={product.imageUrl}/>
+
                   <img width='200px' src={product.imageUrl}/>
+
                   <h1 style={{alignSelf:'center' , fontFamily: "Allerta Stencil"}}>{product.name}</h1>
                 </div>
                 <div className='cart-unitPrice-description-container'>
