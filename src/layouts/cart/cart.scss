@@ -14,12 +14,17 @@
     justify-content: space-between;
     margin-bottom: 15px;
     width: 98%;
-    margin: 0 auto 30px auto;
+    
+    margin: 0 auto 50px auto;
 }
 
 .cart-remove-button {
     font-family: "Barlow";
     cursor: pointer;
+    max-width: 650px;
+    width: 100%;
+    height: 40px;
+    align-self: center;
 }
 .cart-checkout-button {
     font-family: "Barlow";
@@ -49,10 +54,12 @@
 
 .cart-image {
     align-self: center;
+    width: 100%;
+    max-width: 500px;
 }
 
-@media (min-width: 426px) {
-    .cart-products {
-        flex-direction: row;
-    }
-}
+// @media (min-width: 500px) {
+//     .cart-products {
+//         flex-direction: row;
+//     }
+// }
