@@ -58,8 +58,21 @@
     max-width: 500px;
 }
 
-// @media (min-width: 500px) {
-//     .cart-products {
-//         flex-direction: row;
-//     }
-// }
+@media (min-width: 769px) {
+    .cart-products {
+        flex-direction: row;
+        
+    }
+    .cart-imageUrl-name-container {
+        flex-direction: row;
+        width: 50%;
+    }
+    .cart-remove-button {
+        align-self: auto;
+        height: auto;
+        width: 75px;
+    }
+    .cart-image {
+        width: 250px;
+    }
+}
