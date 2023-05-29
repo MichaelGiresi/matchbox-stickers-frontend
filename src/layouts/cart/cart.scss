@@ -45,7 +45,7 @@
     display: flex;
     // width: 30%;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .cart-product-remove-button {
@@ -61,7 +61,8 @@
 @media (min-width: 769px) {
     .cart-products {
         flex-direction: row;
-        
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
     }
     .cart-imageUrl-name-container {
         flex-direction: row;
