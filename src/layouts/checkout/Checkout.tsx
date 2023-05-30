@@ -564,43 +564,18 @@ for(let i = 0; i < products.length; i++) {
   <div>
     <img id="cart-image-id" src={cartContext?.localCartItems[index].imageUrl} className="cart-product-image" />
 
-    {/* Item Increment */}
-    {/* <div className="cart-product-increment">
-      <div id="cart-increment-remove" onClick={() => {
-        const newQuantity = cartContext?.localCartItems[index][4] - 1;
-        cartContext?.setLocalCartItems(prevCartItems => {
-          const newCartItems = [...prevCartItems];
-          newCartItems[index][4] = newQuantity;
-          if(newQuantity === 0) {
-            cartRemove(index)
-          }
-          
-          return newCartItems;
-        })}}>{cartContext?.localCartItems[index][4] < 2 ? <img  width={'25px'} height={'25px'} /> : "-"}</div>
-      <div id="cart-increment">{cartContext?.localCartItems[index][4]}</div>
-      <div id="cart-increment-remove" onClick={() => {
-        const newQuantity = cartContext?.localCartItems[index][4] + 1;
-        cartContext?.setLocalCartItems(prevCartItems => {
-          const newCartItems = [...prevCartItems];
-          newCartItems[index][4] = newQuantity;
-          return newCartItems;
-        });
-      }}>+</div>
-    </div> */}
-    {/* Item Increment End */}
-
   </div>
   <div className="cart-product-info-increment-wrapper">
     <div className="cart-product-info">
 
       {/* Product Name */}
-      <h4>{cartContext?.localCartItems[index].name}</h4>
+      <h4 style={{textAlign: 'center'}}>{cartContext?.localCartItems[index].name}</h4>
 
       {/* Product Size */}
       
 
       {/* Product Price */}
-      <h3>{`$${cartContext?.localCartItems[index].unitPrice}`}</h3>
+      <h3 style={{marginTop: 0, textAlign: 'center'}}>{`$${cartContext?.localCartItems[index].unitPrice}`}</h3>
 
       {/* Product In Stock */}
 

@@ -7,7 +7,7 @@
 }
 
 .cart-product-image {
-    width: 200px;
+    width: 100%;
 }
 
 .cart-product-info {
@@ -15,7 +15,7 @@
     justify-content: space-between;
     flex-direction: column;
     height: 100%;
-    width: 100px;
+    // width: 100px;
     word-wrap: break-word;
 }
 
@@ -28,7 +28,7 @@
 
 .checkout-product-info-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     color: black;
     margin-bottom: 20px;
