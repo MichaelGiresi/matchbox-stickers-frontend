@@ -557,7 +557,7 @@ for(let i = 0; i < products.length; i++) {
 
     <div className='checkout-container'>
         <div className='checkout-cart-container'>
-          <h1 style={{color: "black", textAlign: 'center', marginBottom: '50px', fontFamily: 'Barlow'}}>Cart Contents:</h1>
+          <h1 style={{color: "black", textAlign: 'center', marginBottom: '50px', fontFamily: 'Barlow', marginTop: '-2px'}}>Cart Contents:</h1>
         {cartContext?.localCartItems.map((e, index) => (
 
 <div key={index} id="cart-product-info-id" className="checkout-product-info-container">
@@ -569,13 +569,13 @@ for(let i = 0; i < products.length; i++) {
     <div className="cart-product-info">
 
       {/* Product Name */}
-      <h4 style={{textAlign: 'center'}}>{cartContext?.localCartItems[index].name}</h4>
+      <h1 style={{textAlign: 'center'}}>{cartContext?.localCartItems[index].name}</h1>
 
       {/* Product Size */}
       
 
       {/* Product Price */}
-      <h3 style={{marginTop: 0, textAlign: 'center'}}>{`$${cartContext?.localCartItems[index].unitPrice}`}</h3>
+      <h2 style={{marginTop: 0, textAlign: 'center'}}>{`$${cartContext?.localCartItems[index].unitPrice}`}</h2>
 
       {/* Product In Stock */}
 
