@@ -32,6 +32,8 @@
   color: black;
   margin-bottom: 20px;
   font-family: "Barlow";
+  padding-bottom: 20px;
+  border-bottom: 2px solid #c3c3c3;
 }
 
 .checkout-cart-container {
@@ -100,14 +102,17 @@
   }
   .checkout-container {
     flex-direction: row;
+    max-width: 1024px;
   }
   .checkout-cart-container {
     width: 50%;
   }
   .checkout-product-info-container {
     width: 90%;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #c3c3c3;
   }
-  .checkout-cart-container h1 {
-    margin-top: -7px;
+  .checkout-input-container {
+    width: 40%;
   }
 }/*# sourceMappingURL=checkout.css.map */
