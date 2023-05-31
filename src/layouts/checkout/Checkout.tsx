@@ -557,50 +557,25 @@ for(let i = 0; i < products.length; i++) {
 
     <div className='checkout-container'>
         <div className='checkout-cart-container'>
-          <h1 style={{color: "black", textAlign: 'center', marginBottom: '50px', fontFamily: 'Barlow'}}>Cart Contents:</h1>
+          <h1 style={{color: "black", textAlign: 'center', marginBottom: '50px', fontFamily: 'Barlow', marginTop: '-2px'}}>Cart Contents:</h1>
         {cartContext?.localCartItems.map((e, index) => (
 
 <div key={index} id="cart-product-info-id" className="checkout-product-info-container">
   <div>
     <img id="cart-image-id" src={cartContext?.localCartItems[index].imageUrl} className="cart-product-image" />
 
-    {/* Item Increment */}
-    {/* <div className="cart-product-increment">
-      <div id="cart-increment-remove" onClick={() => {
-        const newQuantity = cartContext?.localCartItems[index][4] - 1;
-        cartContext?.setLocalCartItems(prevCartItems => {
-          const newCartItems = [...prevCartItems];
-          newCartItems[index][4] = newQuantity;
-          if(newQuantity === 0) {
-            cartRemove(index)
-          }
-          
-          return newCartItems;
-        })}}>{cartContext?.localCartItems[index][4] < 2 ? <img  width={'25px'} height={'25px'} /> : "-"}</div>
-      <div id="cart-increment">{cartContext?.localCartItems[index][4]}</div>
-      <div id="cart-increment-remove" onClick={() => {
-        const newQuantity = cartContext?.localCartItems[index][4] + 1;
-        cartContext?.setLocalCartItems(prevCartItems => {
-          const newCartItems = [...prevCartItems];
-          newCartItems[index][4] = newQuantity;
-          return newCartItems;
-        });
-      }}>+</div>
-    </div> */}
-    {/* Item Increment End */}
-
   </div>
   <div className="cart-product-info-increment-wrapper">
     <div className="cart-product-info">
 
       {/* Product Name */}
-      <h4>{cartContext?.localCartItems[index].name}</h4>
+      <h1 style={{textAlign: 'center'}}>{cartContext?.localCartItems[index].name}</h1>
 
       {/* Product Size */}
       
 
       {/* Product Price */}
-      <h3>{`$${cartContext?.localCartItems[index].unitPrice}`}</h3>
+      <h2 style={{marginTop: 0, textAlign: 'center'}}>{`$${cartContext?.localCartItems[index].unitPrice}`}</h2>
 
       {/* Product In Stock */}
 
