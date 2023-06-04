@@ -15,6 +15,11 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './layouts/checkout/Checkout';
 import { useLocation } from 'react-router-dom';
+import oktaAuth from './oktaConfig.js'
+import { Security, SecureRoute, LoginCallback } from '@okta/okta-react'
+import oktaConfig from './oktaConfig.js';
+
+
 function App() {
 const [products, setProducts] = useState()
 const [cart, setCart] = useState(false)
@@ -56,6 +61,13 @@ const ScrollToTop = () => {
   return null;
 };
 
+function restoreOriginalUri(oktaAuth:any, originalUri:any) {
+  oktaAuth.setOriginalUri(originalUri);
+  window.location.replace(originalUri);
+}
+
+
+
   // useEffect(() => {
   //   const getProducts = async () => {
 
@@ -84,6 +96,8 @@ const ScrollToTop = () => {
   return (
     <div className='app'>
       <Router>
+        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
+
         <ScrollToTop/>
       <CartContext.Provider
           value={{
@@ -98,6 +112,7 @@ const ScrollToTop = () => {
           }}>
       <Nav/>
         <Routes>
+          <Route path="/login/callback" element={<LoginCallback/>} />
           <Route path="/" element={<HomePageOutput/>}/>
           <Route path={`/products/:productId`} element={<ProductPage/>}/>
           <Route path='/cart' element={<Cart/>}/>
@@ -105,6 +120,7 @@ const ScrollToTop = () => {
         </Routes>
       <Footer/>
       </CartContext.Provider>
+            </Security>
       </Router>
       <ToastContainer />
     </div>
