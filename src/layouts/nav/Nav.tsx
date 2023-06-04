@@ -6,6 +6,7 @@ import './nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from '../../contexts/CartContext';
+import { useOktaAuth } from '@okta/okta-react';
 
 const Nav = () => {
   const cartContext = useContext(CartContext)
@@ -14,6 +15,11 @@ const Nav = () => {
   const [menuVisible, setMenuVisible] = useState(false)
   const [aboutOverlayVisible, setAboutOverlayVisible] = useState(false)
 
+  const { oktaAuth } = useOktaAuth();
+
+  const handleLogin = async () => {
+    oktaAuth.signInWithRedirect();
+  };
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   }
@@ -41,6 +47,7 @@ const Nav = () => {
           <div onClick={toggleAboutOverlay} className='nav-about'>
             ABOUT THE PROJECT
           </div>
+          <button onClick={handleLogin}>Login</button>
           <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
           <div className='nav-account-cart-container'>
           <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}>Cart ( {cartContext?.localCartItems.length} )</Link>
