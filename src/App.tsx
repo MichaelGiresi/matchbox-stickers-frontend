@@ -65,34 +65,6 @@ function restoreOriginalUri(oktaAuth:any, originalUri:any) {
   oktaAuth.setOriginalUri(originalUri);
   window.location.replace(originalUri);
 }
-
-
-
-  // useEffect(() => {
-  //   const getProducts = async () => {
-
-  //     const url = `http://localhost:3000/products`
-  //     const username = 'myusername';
-  //     const password = 'mypassword';
-  //     const credentials = btoa(`${username}: ${password}`)
-  //     try {
-  //       const response = await fetch('http://localhost:8080/products', {
-  //         headers: {
-  //           'Authorizaiton' : `Basic ${credentials}`,
-  //         },
-  //       });
-  //       if(response.ok) {
-  //         const responseData = await response.json();
-  //         setProducts(responseData._embedded.products)
-  //       } else {
-  //         throw new Error('Request Failed')
-  //       }
-  //     } catch (error) {
-  //       console.error(error)
-  //     }
-  //   }
-  //   getProducts()
-  //   }, [])
   return (
     <div className='app'>
       <Router>
