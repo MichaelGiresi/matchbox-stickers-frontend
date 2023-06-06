@@ -1,15 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import './checkout.css'
 import { CartContext } from '../../contexts/CartContext'
-// import can from '../../assets/can.png'
 import { stringify } from 'querystring'
 import { toast } from 'react-toastify'
 import { setDefaultResultOrder } from 'dns'
-// import Checkout from '../../models/CheckoutModel'
-
-// What needs to be taken away, and what needs to be added:
-// Quantity of items. The quantity of an item wil only be one.
-// 
 
 const Checkout = () => {
   const cartContext = useContext(CartContext)
