@@ -36,10 +36,6 @@ const Checkout = () => {
     expirationYear: ''
   });
 
-  // useEffect(() => {
-  //   console.log(cartContext?.localCartItems)
-  // })
-
   // Checkout Interface Defintions
 
   interface OrderItems {
