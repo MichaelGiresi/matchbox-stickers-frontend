@@ -84,7 +84,7 @@ function restoreOriginalUri(oktaAuth:any, originalUri:any) {
           }}>
       <Nav/>
         <Routes>
-          <Route path="/login/callback" element={<LoginCallback/>} />
+          <Route path="/login/callback/" element={<LoginCallback/>} />
           <Route path="/" element={<HomePageOutput/>}/>
           <Route path={`/products/:productId`} element={<ProductPage/>}/>
           <Route path='/cart' element={<Cart/>}/>
