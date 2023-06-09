@@ -78,8 +78,8 @@ KNOWN BUGS:
 
         -- Cart
 
-                -- Add titles to the name, price and description divs to display what is written.
-                -- add cursor pointer to continue to checkout button
+                DONE!        -- Add titles to the name, price and description divs to display what is written.
+                DONE!        -- add cursor pointer to continue to checkout button
                 -- add hover color red to remove button
         DONE!        -- Change size of product description
                 
