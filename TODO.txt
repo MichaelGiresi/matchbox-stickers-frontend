@@ -20,9 +20,9 @@ New TODO List on May 15th, 2023
 
         -- Implement stripe for payments
 
-        -- Finish styling for cart
+        DONE!        -- Finish styling for cart
 
-        -- Finish styling for Product Page
+        DONE!        -- Finish styling for Product Page
 
 
 BUGS 
@@ -81,13 +81,13 @@ KNOWN BUGS:
                 DONE!        -- Add titles to the name, price and description divs to display what is written.
                 DONE!        -- add cursor pointer to continue to checkout button
                 -- add hover color red to remove button
-        DONE!        -- Change size of product description
+                DONE!        -- Change size of product description
                 
         -- Checkout
 
-                -- Fix styling in cart contents
-                -- cursor pointer in remove
-                -- have billing address form fields disappear if the box is checked
+        DONE!                -- Fix styling in cart contents
+        DONE!                -- cursor pointer in remove
+        DONE!                -- have billing address form fields disappear if the box is checked
 
 
 
