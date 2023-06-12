@@ -6,6 +6,7 @@ import './nav.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { CartContext } from '../../contexts/CartContext';
+import Login from '../../auth/Login';
 import { useOktaAuth } from '@okta/okta-react';
 
 const Nav = () => {
@@ -14,12 +15,10 @@ const Nav = () => {
   const [about, setAbout] = useState(true)
   const [menuVisible, setMenuVisible] = useState(false)
   const [aboutOverlayVisible, setAboutOverlayVisible] = useState(false)
+  const { oktaAuth, authState } = useOktaAuth();
 
-  const { oktaAuth } = useOktaAuth();
 
-  const handleLogin = async () => {
-    oktaAuth.signInWithRedirect();
-  };
+
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   }
@@ -33,7 +32,17 @@ const Nav = () => {
     toggleMenu()
   }
     
+  const handleLogout = async () => {
+    await oktaAuth.signOut();
+  };
 
+
+  useEffect(() => {
+    // Access the authState object here
+    if (authState && authState.isAuthenticated) {
+      console.log('User is authenticated');
+    }
+  }, [authState]);
 
 
 
@@ -47,7 +56,7 @@ const Nav = () => {
           <div onClick={toggleAboutOverlay} className='nav-about'>
             ABOUT THE PROJECT
           </div>
-          <button onClick={handleLogin}>Login</button>
+          {authState?.isAuthenticated ? (<button onClick={handleLogout}>Logout</button>) : (<Link to="/login">Login</Link>)}
           <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
           <div className='nav-account-cart-container'>
           <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}>Cart ( {cartContext?.localCartItems.length} )</Link>
