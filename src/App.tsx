@@ -15,9 +15,10 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Checkout from './layouts/checkout/Checkout';
 import { useLocation } from 'react-router-dom';
-import oktaAuth from './oktaConfig.js'
-import { Security, SecureRoute, LoginCallback } from '@okta/okta-react'
-import oktaConfig from './oktaConfig.js';
+import Login from './auth/Login';
+import { OktaAuth } from '@okta/okta-auth-js'
+import { Security, SecureRoute, LoginCallback } from '@okta/okta-react';
+
 
 
 function App() {
@@ -61,15 +62,23 @@ const ScrollToTop = () => {
   return null;
 };
 
-function restoreOriginalUri(oktaAuth:any, originalUri:any) {
-  oktaAuth.setOriginalUri(originalUri);
-  window.location.replace(originalUri);
-}
+const oktaAuth = new OktaAuth({
+  issuer: 'https://dev-28096334.okta.com/oauth2/default',
+  clientId: '0oa9siomocTY4nllB5d7',
+  redirectUri: window.location.origin + '/login/callback',
+  pkce: true,
+});
+
+const config = {
+  issuer: 'https://dev-28096334.okta.com/oauth2/default',
+  clientId: '0oa9siomocTO4nllB5d7',
+  redirectUri: window.location.origin + '/login/callback',
+};
+
   return (
     <div className='app'>
       <Router>
-        <Security oktaAuth={oktaAuth} restoreOriginalUri={restoreOriginalUri}>
-
+      <Security oktaAuth={oktaAuth} restoreOriginalUri={(oktaAuth, originalUri) => { window.location.replace(originalUri || '/') }}>
         <ScrollToTop/>
       <CartContext.Provider
           value={{
@@ -84,15 +93,17 @@ function restoreOriginalUri(oktaAuth:any, originalUri:any) {
           }}>
       <Nav/>
         <Routes>
-          <Route path="/login/callback/" element={<LoginCallback/>} />
           <Route path="/" element={<HomePageOutput/>}/>
           <Route path={`/products/:productId`} element={<ProductPage/>}/>
           <Route path='/cart' element={<Cart/>}/>
           <Route path='/checkout' element={<Checkout/>}/>
+          <Route path='/login' element={<Login />} />
+          <Route path='/login/callback' element={<LoginCallback />} />
+
         </Routes>
       <Footer/>
       </CartContext.Provider>
-            </Security>
+          </Security>
       </Router>
       <ToastContainer />
     </div>
