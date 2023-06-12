@@ -1,3 +1,122 @@
+Sunday, June 11th, 2023
+
+        -- Authentication Complete, on Front and Back End
+
+Monday, June 12th, 2023
+
+        -- Begin creation of Admin Page
+
+Tuesday, June 13th, 2023
+
+        -- Continue work on Admin Page
+
+Wednesday, June 14th, 2023
+
+        -- Finish Admin Page
+
+Thursday, June 15th, 2023
+
+        -- Set up Junior Administrator in Okta, and create users for it in Okta dashboard
+        -- Begin Junior Admin Page
+
+Friday, June 16th, 2023
+
+        -- Continue Junior Admin Page
+
+Saturday, June 17th, 2023
+
+        -- Finish Junior Admin Page
+
+Sunday, June 18th, 2023
+
+        -- Create a make new user option 
+
+Monday, June 19th, 2023
+
+        -- Continue working on making new user option
+
+Tuesday, June 20th, 2023
+
+        -- Finish making new user option
+
+Wednesday, June 21st, 2023
+
+        -- Figure out how to create an email list, and be able to send out emails based off of certain filters, like artists, and topics or product types
+
+Thursday, June 22nd, 2023
+
+        -- Continue email 
+
+Friday, June 23rd, 2023
+
+        -- Continue email
+
+Saturday, June 24th 2023
+
+        -- Continue email
+
+Sunday, June 25th, 2023
+
+        -- Finish email
+
+Monday, June 26th, 2023
+
+        -- Create the option to be able to make a product go live at a specific time
+
+Tuesday, June 27th, 2023
+
+        -- Continue on timed sale
+
+Wednesday, June 28th, 2023
+
+        -- Continue on timed sale
+
+Thursday, June 29th, 2023
+
+        -- Finish timed sale
+
+Friday, June 30th, 2023
+
+        -- Implement Stripe
+
+Saturday, July 1st, 2023
+
+        -- Continue Stripe
+
+Sunday, July 2nd, 2023
+
+        -- Continue Stripe
+
+Monday, July 3rd, 2023
+
+        -- Finish Stripe
+
+Tuesday, July 4th, 2023
+
+        -- Research on the fastest and easiest way to deploy the project
+
+Wednesday, July 5th 2023
+
+        -- Deploy Project
+
+Thursday, July 6th 2023
+
+        -- Continue Deployment
+
+Friday, July 7th 2023
+
+        -- Finish Deployment
+
+
+
+
+
+
+
+
+
+
+
 
 New TODO List on May 15th, 2023
 
@@ -20,16 +139,16 @@ New TODO List on May 15th, 2023
 
         -- Implement stripe for payments
 
-        -- Finish styling for cart
+        DONE!        -- Finish styling for cart
 
-        -- Finish styling for Product Page
+        DONE!        -- Finish styling for Product Page
 
 
 BUGS 
         DONE!        -- Check Fonts on HomePage
-        -- Check Fonts on Product Page
+        DONE!        -- Check Fonts on Product Page
         DONE!        -- Check Fonts on Cart
-        -- Check Fonts on Checkout
+        DONE!        -- Check Fonts on Checkout
         DONE!        -- Nav carousel can be seen in front of hamburger menu
         DONE!        -- Cart in hamburger menu has decoration on text
         DONE!        -- upcomming drops in hero should be centered on mobile
@@ -78,16 +197,16 @@ KNOWN BUGS:
 
         -- Cart
 
-                -- Add titles to the name, price and description divs to display what is written.
-                -- add cursor pointer to continue to checkout button
+                DONE!        -- Add titles to the name, price and description divs to display what is written.
+                DONE!        -- add cursor pointer to continue to checkout button
                 -- add hover color red to remove button
-        DONE!        -- Change size of product description
+                DONE!        -- Change size of product description
                 
         -- Checkout
 
-                -- Fix styling in cart contents
-                -- cursor pointer in remove
-                -- have billing address form fields disappear if the box is checked
+        DONE!                -- Fix styling in cart contents
+        DONE!                -- cursor pointer in remove
+        DONE!                -- have billing address form fields disappear if the box is checked
 
 
 

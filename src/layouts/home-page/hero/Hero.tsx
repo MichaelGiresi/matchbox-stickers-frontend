@@ -81,26 +81,8 @@ const Hero = () => {
             <p className='hero-drop-upcomming-drop' >Silent Symphony of the Cosmos</p>
           </div>
           
-          {/* <div className='hero-drop-info-container2'>
-            <div className='hero-drop-into-title'>DROP #1</div>
-            <h1 className='hero-drop-title'>WHATEVER WEATHER</h1>
-            <p id='hero-info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-            <button id='hero-button'>ADD TO CART <sup className='sup-dollar'>$</sup>12.00</button>
-            <div className="remaining__remainingProgressBar">                
-              <h6 id="remaining">21 <span className='remaining-span'>of 100</span> Remaining</h6>
-              <div id="remainingProgressBar"></div>
-              <div id="remainingProgressBarStatus"></div>
-            </div>
-          </div> */}
         </div>
       </div>
-      {/* <div className='hero-bottom'>
-        <div className="countdown">
-          <h6 id="countdown__nextDrop">NEXT DROP</h6>
-          <h5 id="countdown__dropTitle">CLASSIC<br/> CARS</h5>
-          <h5 id="countdown__timeRemaining">JULY 1<sup className='sup'>ST</sup></h5>
-        </div>
-      </div> */}
     </div>
 
   )
