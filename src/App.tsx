@@ -1,11 +1,10 @@
 import './App.css';
-
 import Nav from './layouts/nav/Nav';
 import HomePageOutput from './layouts/home-page/output/HomePageOutput';
 import Footer from './layouts/footer/Footer';
 import { CartContext } from './contexts/CartContext'
 import Hero from './layouts/home-page/hero/Hero';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Navigate } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import ShopAll from './layouts/shop-all/ShopAll';
 import { useEffect, useState } from 'react';
@@ -17,11 +16,11 @@ import Checkout from './layouts/checkout/Checkout';
 import { useLocation } from 'react-router-dom';
 import Login from './auth/Login';
 import { OktaAuth } from '@okta/okta-auth-js'
-import { Security, SecureRoute, LoginCallback } from '@okta/okta-react';
-
-
+import { Security, SecureRoute, LoginCallback, useOktaAuth } from '@okta/okta-react';
+import AdminPage from './layouts/admin/AdminPage';
 
 function App() {
+  
 const [products, setProducts] = useState()
 const [cart, setCart] = useState(false)
 
@@ -69,12 +68,6 @@ const oktaAuth = new OktaAuth({
   pkce: true,
 });
 
-const config = {
-  issuer: 'https://dev-28096334.okta.com/oauth2/default',
-  clientId: '0oa9siomocTO4nllB5d7',
-  redirectUri: window.location.origin + '/login/callback',
-};
-
   return (
     <div className='app'>
       <Router>
@@ -99,7 +92,7 @@ const config = {
           <Route path='/checkout' element={<Checkout/>}/>
           <Route path='/login' element={<Login />} />
           <Route path='/login/callback' element={<LoginCallback />} />
-
+          <Route path='/admin' element={<AdminPage/>}/>
         </Routes>
       <Footer/>
       </CartContext.Provider>
