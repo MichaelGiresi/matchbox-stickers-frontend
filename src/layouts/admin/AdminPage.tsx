@@ -1,10 +1,14 @@
 import { useOktaAuth } from '@okta/okta-react';
 import { Navigate } from 'react-router-dom';
 import './adminPage.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AdminPage() {
   const { authState } = useOktaAuth();
+  const [products, setProducts] = useState([])
+  const username = 'myusername';
+  const password = 'mypassword';
+  const credentials = btoa(`${username}:${password}`);
 
   const [newProduct, setNewProduct] = useState({
     name: '',
@@ -18,6 +22,56 @@ function AdminPage() {
     date_active: ''
 
   })
+
+//   try {
+//     const url = 'http://localhost:8080/api/orders?size=1000'
+//     const options = {
+//     method: "GET", 
+//     headers: 
+//       {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
+//     };
+//     const response = await fetch(url, options);
+//     const data = await response.json();
+//     const orders = data
+//     // console.log(orders)
+//     // console.log(orderTrackingNumber)
+//     for(let i = 0; i < orders.length; i++) {
+//       if(orders[i].orderTrackingNumber === orderTrackingNumber) {
+
+//         // activeOrderNumber = orders[i].orderTrackingNumber
+//         activeOrderId = orders[i].id
+//         console.log(`This is the active order id = ${activeOrderId}`)
+//         } 
+//     }
+    
+//   }
+
+
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+        try {
+          const url = 'http://localhost:8080/products'
+          const options = {
+            method: "GET", 
+            headers: 
+              {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
+            };
+            const response = await fetch(url, options)
+          const data = await response.json();
+          const responseData = data
+          
+          setProducts(responseData._embedded.products)
+          console.log(data)
+        } catch (error) {
+          console.error('Error fetching orders:', error)
+        }
+      };
+      fetchProducts();
+      console.log(products)
+  },[])
+
+
 
   if (!authState) return null;
 
@@ -38,7 +92,40 @@ function AdminPage() {
     });
   }
 
-  const handleSubmit = async (event) => {
+
+
+  const handleAddProduct = async (event) => {
+    event.preventDefault();
+    
+    // Send a request to your server to add the new product
+    const response = await fetch('http://localhost:8080/products', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        "Authorization" : `Basic ${credentials}`
+      },
+      body: JSON.stringify(newProduct)
+    });
+
+    if (response.ok) {
+      alert("Product added!");
+      setNewProduct({
+        name: '',
+        description: '',
+        sku: '',
+        quantity: 0,
+        unit_price: 0,
+        image_url: '',
+        active: 0,
+        category_id: 0,
+        date_active: ''
+      });
+    } else {
+      alert("Failed to add product.");
+    }
+  }
+
+  const handleEditProduct = async (event) => {
     event.preventDefault();
     
     // Send a request to your server to add the new product
@@ -68,44 +155,70 @@ function AdminPage() {
     }
   }
 
-
   return (
     <div className='admin-page'>
         <h1 style={{textAlign: 'center'}}>Admin Page</h1>
         <div className='admin-product-add-edit-container'>
-
-        <div className='admin-product-add'>
-            <h3 style={{textAlign: 'center'}}>ADD PRODUCT</h3>
-            <div>
-            <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
-      </label>
-      <label>
-        Description:
-        <input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
-      </label>
-      <label>
-        Price:
-        <input type="number" name="price" value={newProduct.unit_price} onChange={handleInputChange} />
-      </label>
-      <label>
-        Image URL:
-        <input type="text" name="imageUrl" value={newProduct.image_url} onChange={handleInputChange} />
-      </label>
-      <button type="submit">Add Product</button>
-    </form>
+            <div className='admin-product-add'>
+                <h3 style={{textAlign: 'center'}}>ADD PRODUCT</h3>
+                <div>
+                    <form className='admin-product-add-form' onSubmit={handleAddProduct}>
+                        <label className='admin-product-label-input'>
+                            Name:
+                            <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
+                            Description:
+                            <input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
+                            Price:
+                            <input type="number" name="price" value={newProduct.unit_price} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'> 
+                            Image URL:
+                            <input type="text" name="imageUrl" value={newProduct.image_url} onChange={handleInputChange} />
+                        </label>
+                        <button type="submit">Add Product</button>
+                    </form>
+                </div>
             </div>
-
-        </div>
-        <div className='admin-product-edit'>
-        Edit
-        </div>
+            <div className='admin-product-edit'>
+            <h3 style={{textAlign: 'center'}}>EDIT PRODUCT</h3>
+                <div>
+                    <form className='admin-product-add-form' onSubmit={handleEditProduct}>
+                        <label className='admin-product-label-input'>
+                            Name:
+                            <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
+                            Description:
+                            <input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
+                            Price:
+                            <input type="number" name="price" value={newProduct.unit_price} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'> 
+                            Image URL:
+                            <input type="text" name="imageUrl" value={newProduct.image_url} onChange={handleInputChange} />
+                        </label>
+                        <button type="submit">Add Product</button>
+                    </form>
+                </div>
+            </div>
         </div>
         <div className='admin-remove-product-container'>
             <div className='admin-remove-product'>
-            Remove
+            <h3 style={{textAlign: 'center'}}>REMOVE PRODUCT</h3>
+            {products.map((e) => {
+                console.log(e)
+                return (
+                    <tr>
+                    <td>{e.name}</td>
+                    </tr>
+                )
+            })}
             </div>
         </div>
         <div className='admin-active-orders'>

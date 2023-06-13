@@ -7,13 +7,25 @@
 .admin-product-add-edit-container {
     max-width: 1600px;
     width: 98%;
-    border: 1px solid orange;
+    border: 1px solid black;
+    padding: 2px;
     margin: 0 auto;
 
 }
 
 .admin-product-add {
     width: 98%;
-    border: 1px solid blue;
-    
+    // border: 1px solid blue;
+
+}
+
+.admin-product-add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-product-label-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
 }
