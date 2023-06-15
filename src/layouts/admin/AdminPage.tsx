@@ -211,14 +211,36 @@ function AdminPage() {
         <div className='admin-remove-product-container'>
             <div className='admin-remove-product'>
             <h3 style={{textAlign: 'center'}}>REMOVE PRODUCT</h3>
-            {products.map((e) => {
-                console.log(e)
-                return (
-                    <tr>
+                      <table style={{ display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
+                      <thead style={{width: '100%'}}>
+                        <tr style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>SKU</th>
+                          {/* <th>Date Active</th> */}
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+            {products.map((e) => (
+              
+              
+                  <tr className='admin-remove-product-map'>
+                    <td>{e.id}</td>
                     <td>{e.name}</td>
+                    <td>{e.sku}</td>
+                    {/* <td>{e.dateActive}</td> */}
+                    <td>{e.quantity}</td>
+                    <td>${e.unitPrice}</td>
+                    <td>{e.description}</td>
                     </tr>
-                )
-            })}
+                    
+                    ))}
+                    </tbody>
+                    </table>
             </div>
         </div>
         <div className='admin-active-orders'>
