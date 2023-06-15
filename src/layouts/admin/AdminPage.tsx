@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 function AdminPage() {
   const { authState } = useOktaAuth();
   const [products, setProducts] = useState([])
+  const [order, setOrders] = useState([])
   const username = 'myusername';
   const password = 'mypassword';
   const credentials = btoa(`${username}:${password}`);
@@ -22,29 +23,31 @@ function AdminPage() {
     date_active: ''
 
   })
-
-//   try {
-//     const url = 'http://localhost:8080/api/orders?size=1000'
-//     const options = {
-//     method: "GET", 
-//     headers: 
-//       {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
-//     };
-//     const response = await fetch(url, options);
-//     const data = await response.json();
-//     const orders = data
-//     // console.log(orders)
-//     // console.log(orderTrackingNumber)
-//     for(let i = 0; i < orders.length; i++) {
-//       if(orders[i].orderTrackingNumber === orderTrackingNumber) {
-
-//         // activeOrderNumber = orders[i].orderTrackingNumber
-//         activeOrderId = orders[i].id
-//         console.log(`This is the active order id = ${activeOrderId}`)
-//         } 
-//     }
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = 'http://localhost:8080/api/orders?size=1000'
+        const options = {
+          method: "GET", 
+          headers: 
+          {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
+        };
+        const response = await fetch(url, options);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        const orders = data
+        console.log(orders)
+        setOrders(orders)
+      } catch (error) {
+        console.log(error)
+      }
+    }
     
-//   }
+    fetchData();
+  }, []);  // Empty dependency array means this effect will only run once when the component mounts.
+  
 
 
 
@@ -244,7 +247,39 @@ function AdminPage() {
             </div>
         </div>
         <div className='admin-active-orders'>
-            Active Orders
+        <div className='admin-remove-product'>
+            <h3 style={{textAlign: 'center'}}>REMOVE PRODUCT</h3>
+                      <table style={{ display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
+                      <thead style={{width: '100%'}}>
+                        <tr style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+                          <th>ID</th>
+                          <th>Name</th>
+                          <th>SKU</th>
+                          {/* <th>Date Active</th> */}
+                          <th>Quantity</th>
+                          <th>Price</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
+            {order.map((e) => (
+              
+              
+                  <tr className='admin-remove-product-map'>
+                    <td>{e.id}</td>
+                    <td>{e.name}</td>
+                    <td>{e.sku}</td>
+                    {/* <td>{e.dateActive}</td> */}
+                    <td>{e.quantity}</td>
+                    <td>${e.unitPrice}</td>
+                    <td>{e.description}</td>
+                    </tr>
+                    
+                    ))}
+                    </tbody>
+                    </table>
+            </div>
         </div>
     </div>
   )
