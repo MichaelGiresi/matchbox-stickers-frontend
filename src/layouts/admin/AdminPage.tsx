@@ -217,6 +217,7 @@ function AdminPage() {
                       <table style={{ display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
                       <thead style={{width: '100%'}}>
                         <tr style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
+                          <th></th>
                           <th>ID</th>
                           <th>Name</th>
                           <th>SKU</th>
@@ -232,6 +233,7 @@ function AdminPage() {
               
               
                   <tr className='admin-remove-product-map'>
+                    <button>REMOVE</button>
                     <td>{e.id}</td>
                     <td>{e.name}</td>
                     <td>{e.sku}</td>
@@ -253,12 +255,10 @@ function AdminPage() {
                       <thead style={{width: '100%'}}>
                         <tr style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
                           <th>ID</th>
-                          <th>Name</th>
-                          <th>SKU</th>
+                          <th>Tracking Number</th>
+                          <th>Total Price</th>
                           {/* <th>Date Active</th> */}
-                          <th>Quantity</th>
-                          <th>Price</th>
-                          <th>Description</th>
+                          <th>Total Quantity</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -267,13 +267,12 @@ function AdminPage() {
               
               
                   <tr className='admin-remove-product-map'>
+                    
                     <td>{e.id}</td>
-                    <td>{e.name}</td>
-                    <td>{e.sku}</td>
+                    <td>{e.orderTrackingNumber}</td>
+                    <td>${e.totalPrice}</td>
                     {/* <td>{e.dateActive}</td> */}
-                    <td>{e.quantity}</td>
-                    <td>${e.unitPrice}</td>
-                    <td>{e.description}</td>
+                    <td>{e.totalQuantity}</td>
                     </tr>
                     
                     ))}
