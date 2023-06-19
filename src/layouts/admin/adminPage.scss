@@ -1,0 +1,41 @@
+.admin-page {
+
+    background-image: (url(../../assets/creamTexture.jpeg));
+}
+
+
+.admin-product-add-edit-container {
+    max-width: 1600px;
+    width: 98%;
+    border: 1px solid black;
+    padding: 2px;
+    margin: 0 auto;
+
+}
+
+.admin-product-add {
+    width: 98%;
+    // border: 1px solid blue;
+
+}
+
+.admin-product-add-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-product-label-input {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.admin-remove-product {
+    width: 98%;
+    margin: 0 auto;
+}
+
+.admin-remove-product-map {
+    width: 100%;
+    text-align: center;
+}

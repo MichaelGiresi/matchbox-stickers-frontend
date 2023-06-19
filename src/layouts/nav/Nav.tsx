@@ -57,6 +57,7 @@ const Nav = () => {
             ABOUT THE PROJECT
           </div>
           {authState?.isAuthenticated ? (<button onClick={handleLogout}>Logout</button>) : (<Link to="/login">Login</Link>)}
+          {authState?.isAuthenticated ? (<Link to='/admin'>Admin</Link>) : null}
           <div className='nav-img'><Link to={'/'}><img style={{width: '100%'}} src={mbsMedium}/></Link></div>
           <div className='nav-account-cart-container'>
           <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}>Cart ( {cartContext?.localCartItems.length} )</Link>

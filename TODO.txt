@@ -1,6 +1,6 @@
 Sunday, June 11th, 2023
 
-        -- Authentication Complete, on Front and Back End
+        DONE!        -- Authentication Complete, on Front and Back End
 
 Monday, June 12th, 2023
 
