@@ -214,17 +214,17 @@ function AdminPage() {
         <div className='admin-remove-product-container'>
             <div className='admin-remove-product'>
             <h3 style={{textAlign: 'center'}}>REMOVE PRODUCT</h3>
-                      <table style={{width: '98%', margin: '0 auto'}}>
+                      <table style={{width: '98%', margin: '0 auto', maxWidth: '1300px'}}>
                       <thead>
                         <tr>
-                          <th>REMOVE</th>
-                          <th>ID</th>
-                          <th>Name</th>
-                          <th>SKU</th>
+                          <th style={{width: '14.28%'}}>REMOVE</th>
+                          <th style={{width: '14.28%'}}>ID</th>
+                          <th style={{width: '14.28%'}}>Name</th>
+                          <th style={{width: '14.28%'}}>SKU</th>
                           {/* <th>Date Active</th> */}
-                          <th>Quantity</th>
-                          <th>Price</th>
-                          <th>Description</th>
+                          <th style={{width: '14.28%'}}>Quantity</th>
+                          <th style={{width: '14.28%'}}>Price</th>
+                          <th style={{width: '14.28%'}}>Description</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -250,15 +250,16 @@ function AdminPage() {
         </div>
         <div className='admin-active-orders'>
         <div className='admin-remove-product'>
-            <h3 style={{textAlign: 'center'}}>REMOVE PRODUCT</h3>
-                      <table style={{ display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
-                      <thead style={{width: '100%'}}>
-                        <tr style={{display: 'flex', width: '100%', justifyContent: 'space-between'}}>
-                          <th>ID</th>
-                          <th>Tracking Number</th>
-                          <th>Total Price</th>
+            <h3 style={{textAlign: 'center'}}>ORDERS</h3>
+                      <table style={{width: '98%', margin: '0 auto', maxWidth: '1300px'}}>
+                      <thead style={{}}>
+                        <tr style={{}}>
+                          <th style={{width: '20%'}}>TOGGLE</th>
+                          <th style={{width: '20%'}}>ID</th>
+                          <th style={{width: '20%'}}>Tracking Number</th>
+                          <th style={{width: '20%'}}>Total Price</th>
                           {/* <th>Date Active</th> */}
-                          <th>Total Quantity</th>
+                          <th style={{width: '20%'}}>Total Quantity</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -267,7 +268,7 @@ function AdminPage() {
               
               
                   <tr className='admin-remove-product-map'>
-                    
+                    <td><button>ACTIVE</button></td>
                     <td>{e.id}</td>
                     <td>{e.orderTrackingNumber}</td>
                     <td>${e.totalPrice}</td>
