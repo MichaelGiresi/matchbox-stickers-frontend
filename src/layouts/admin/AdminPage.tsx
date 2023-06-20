@@ -89,11 +89,18 @@ function AdminPage() {
 
 
   const handleInputChange = (event) => {
+    let value = event.target.value;
+  
+    // check if the input is for the 'price' field and convert the string to a float
+    if (event.target.name === 'unit_price') {
+      value = parseFloat(value);
+    }
+  
     setNewProduct({
       ...newProduct,
-      [event.target.name]: event.target.value
+      [event.target.name]: value
     });
-  }
+  };
 
 
 
@@ -176,13 +183,13 @@ function AdminPage() {
                         </label>
                         <label className='admin-product-label-input'>
                             Price:
-                            <input type="number" name="price" value={newProduct.unit_price} onChange={handleInputChange} />
+                            <input type="number" name="unit_price" value={newProduct.unit_price} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'> 
                             Image URL:
-                            <input type="text" name="imageUrl" value={newProduct.image_url} onChange={handleInputChange} />
+                            <input type="text" name="image_url" value={newProduct.image_url} onChange={handleInputChange} />
                         </label>
-                        <button type="submit">Add Product</button>
+                        <button onClick={handleAddProduct} type="submit">Add Product</button>
                     </form>
                 </div>
             </div>
@@ -200,7 +207,7 @@ function AdminPage() {
                         </label>
                         <label className='admin-product-label-input'>
                             Price:
-                            <input type="number" name="price" value={newProduct.unit_price} onChange={handleInputChange} />
+                            <input type="number" name="unit_price" value={newProduct.unit_price} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'> 
                             Image URL:
@@ -283,8 +290,6 @@ function AdminPage() {
         </div>
     </div>
   )
-
-  // AdminPage code here
 }
 
 export default AdminPage;
