@@ -16,7 +16,7 @@ function AdminPage() {
     description: '',
     sku: '',
     quantity: 0,
-    unit_price: 0,
+    unitPrice: 0,
     image_url: '',
     active: 0,
     category_id: 0,
@@ -92,7 +92,7 @@ function AdminPage() {
     let value = event.target.value;
   
     // check if the input is for the 'price' field and convert the string to a float
-    if (event.target.name === 'unit_price') {
+    if (event.target.name === 'unitPrice') {
       value = parseFloat(value);
     }
   
@@ -124,7 +124,7 @@ function AdminPage() {
         description: '',
         sku: '',
         quantity: 0,
-        unit_price: 0,
+        unitPrice: 0,
         image_url: '',
         active: 0,
         category_id: 0,
@@ -154,7 +154,7 @@ function AdminPage() {
         description: '',
         sku: '',
         quantity: 0,
-        unit_price: 0,
+        unitPrice: 0,
         image_url: '',
         active: 0,
         category_id: 0,
@@ -178,12 +178,20 @@ function AdminPage() {
                             <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'>
+                            SKU:
+                            <input type="text" name="sku" value={newProduct.sku} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
                             Description:
                             <input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'>
                             Price:
-                            <input type="number" name="unit_price" value={newProduct.unit_price} onChange={handleInputChange} />
+                            <input type="number" name="unitPrice" value={newProduct.unitPrice} onChange={handleInputChange} />
+                        </label>
+                        <label className='admin-product-label-input'>
+                            Quantity:
+                            <input type="number" name="quantity" value={newProduct.quantity} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'> 
                             Image URL:
@@ -207,7 +215,7 @@ function AdminPage() {
                         </label>
                         <label className='admin-product-label-input'>
                             Price:
-                            <input type="number" name="unit_price" value={newProduct.unit_price} onChange={handleInputChange} />
+                            <input type="number" name="unitPrice" value={newProduct.unitPrice} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'> 
                             Image URL:
