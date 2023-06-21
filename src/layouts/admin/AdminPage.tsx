@@ -10,8 +10,21 @@ function AdminPage() {
   const username = 'myusername';
   const password = 'mypassword';
   const credentials = btoa(`${username}:${password}`);
-
+  const [refreshKey, setRefreshKey] = useState(0)
   const [newProduct, setNewProduct] = useState({
+    name: '',
+    description: '',
+    sku: '',
+    quantity: 0,
+    unitPrice: 0,
+    image_url: '',
+    active: 0,
+    category_id: 0,
+    date_active: ''
+
+  })
+
+  const [editProduct, setEditProduct] = useState({
     name: '',
     description: '',
     sku: '',
@@ -46,7 +59,7 @@ function AdminPage() {
     }
     
     fetchData();
-  }, []);  // Empty dependency array means this effect will only run once when the component mounts.
+  }, [refreshKey]);  // Empty dependency array means this effect will only run once when the component mounts.
   
 
 
@@ -72,7 +85,7 @@ function AdminPage() {
       };
       fetchProducts();
       console.log(products)
-  },[])
+  },[refreshKey])
 
 
 
@@ -118,7 +131,6 @@ function AdminPage() {
     });
 
     if (response.ok) {
-      alert("Product added!");
       setNewProduct({
         name: '',
         description: '',
@@ -130,6 +142,8 @@ function AdminPage() {
         category_id: 0,
         date_active: ''
       });
+      setRefreshKey(oldKey => oldKey + 1);
+      
     } else {
       alert("Failed to add product.");
     }
@@ -148,7 +162,7 @@ function AdminPage() {
     });
 
     if (response.ok) {
-      alert("Product added!");
+      
       setNewProduct({
         name: '',
         description: '',
@@ -160,6 +174,7 @@ function AdminPage() {
         category_id: 0,
         date_active: ''
       });
+      setRefreshKey(oldKey => oldKey + 1);
     } else {
       alert("Failed to add product.");
     }
@@ -207,19 +222,19 @@ function AdminPage() {
                     <form className='admin-product-add-form' onSubmit={handleEditProduct}>
                         <label className='admin-product-label-input'>
                             Name:
-                            <input type="text" name="name" value={newProduct.name} onChange={handleInputChange} />
+                            <input type="text" name="name" value={editProduct.name} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'>
                             Description:
-                            <input type="text" name="description" value={newProduct.description} onChange={handleInputChange} />
+                            <input type="text" name="description" value={editProduct.description} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'>
                             Price:
-                            <input type="number" name="unitPrice" value={newProduct.unitPrice} onChange={handleInputChange} />
+                            <input type="number" name="unitPrice" value={editProduct.unitPrice} onChange={handleInputChange} />
                         </label>
                         <label className='admin-product-label-input'> 
                             Image URL:
-                            <input type="text" name="imageUrl" value={newProduct.image_url} onChange={handleInputChange} />
+                            <input type="text" name="imageUrl" value={editProduct.image_url} onChange={handleInputChange} />
                         </label>
                         <button type="submit">Add Product</button>
                     </form>
