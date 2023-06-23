@@ -149,6 +149,28 @@ function AdminPage() {
     }
   }
 
+  const handleRemoveProduct = async (id) => {
+    try {
+      const url = `http://localhost:8080/products/${id}`; // assuming id is part of the url for deleting
+      const options = {
+        method: "DELETE",
+        headers: 
+          {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
+      };
+      const response = await fetch(url, options);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      console.log(`Product with id ${id} has been deleted.`);
+      setRefreshKey(oldKey => oldKey + 1); // Trigger a re-render to update the list of products
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   const handleEditProduct = async (event) => {
     event.preventDefault();
     
@@ -263,7 +285,7 @@ function AdminPage() {
               
               
                   <tr className='admin-remove-product-map'>
-                    <td><button>REMOVE</button></td>
+                    <td><button onClick={() => handleRemoveProduct(e.id)}>REMOVE</button></td>
                     <td>{e.id}</td>
                     <td>{e.name}</td>
                     <td>{e.sku}</td>
