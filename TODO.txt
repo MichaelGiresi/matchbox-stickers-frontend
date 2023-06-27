@@ -121,7 +121,7 @@ Friday, July 7th 2023
 New TODO List on May 15th, 2023
 
 
-        -- Authentication on the front and back end
+        DONE!        -- Authentication on the front and back end
 
         -- Be able to create a new user in the front end using okta.
 
