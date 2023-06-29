@@ -151,13 +151,17 @@ function AdminPage() {
 
   const handleRemoveProduct = async (id) => {
     try {
-      const url = `http://localhost:8080/products/${id}`; // assuming id is part of the url for deleting
-      const options = {
+      
+      const response = await fetch(`http://localhost:8080/products/${id}`, {
         method: "DELETE",
         headers: 
-          {"Content-Type": "application/json", "Authorization" : `Basic ${credentials}`},
-      };
-      const response = await fetch(url, options);
+          {"Content-Type": "application/json", 
+          "Authorization" : `Basic ${credentials}`}
+      });
+//       const url = ; // assuming id is part of the url for deleting
+//       const options = {
+// ,
+//       };
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
