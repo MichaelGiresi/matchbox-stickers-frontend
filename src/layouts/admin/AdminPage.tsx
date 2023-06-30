@@ -10,7 +10,7 @@ function AdminPage() {
   const username = 'myusername';
   const password = 'mypassword';
   const credentials = btoa(`${username}:${password}`);
-  const [refreshKey, setRefreshKey] = useState(0)
+  // const [refreshKey, setRefreshKey] = useState(0)
   const [newProduct, setNewProduct] = useState({
     name: '',
     description: '',
@@ -51,7 +51,7 @@ function AdminPage() {
         }
         const data = await response.json();
         const orders = data
-        console.log(orders)
+        // console.log(orders)
         setOrders(orders)
       } catch (error) {
         console.log(error)
@@ -59,7 +59,7 @@ function AdminPage() {
     }
     
     fetchData();
-  }, [refreshKey]);  // Empty dependency array means this effect will only run once when the component mounts.
+  }, []);  // Empty dependency array means this effect will only run once when the component mounts.
   
 
 
@@ -78,14 +78,14 @@ function AdminPage() {
           const responseData = data
           
           setProducts(responseData._embedded.products)
-          console.log(data)
+          // console.log(data)
         } catch (error) {
           console.error('Error fetching orders:', error)
         }
       };
       fetchProducts();
-      console.log(products)
-  },[refreshKey])
+      // console.log(products)
+  },[])
 
 
 
@@ -108,10 +108,13 @@ function AdminPage() {
     if (event.target.name === 'unitPrice') {
       value = parseFloat(value);
     }
+    if (event.target.name === 'customer_id') {
+      value = parseInt(value, 10);
+    }
   
     setNewProduct({
       ...newProduct,
-      [event.target.name]: value
+      [event.target.name]: value,
     });
   };
 
@@ -142,7 +145,7 @@ function AdminPage() {
         category_id: 0,
         date_active: ''
       });
-      setRefreshKey(oldKey => oldKey + 1);
+      // setRefreshKey(oldKey => oldKey + 1);
       
     } else {
       alert("Failed to add product.");
@@ -150,7 +153,10 @@ function AdminPage() {
   }
 
   const handleRemoveProduct = async (id) => {
+
+
     try {
+
       
       const response = await fetch(`http://localhost:8080/products/${id}`, {
         method: "DELETE",
@@ -168,10 +174,8 @@ function AdminPage() {
       }
 
       console.log(`Product with id ${id} has been deleted.`);
-      setRefreshKey(oldKey => oldKey + 1); // Trigger a re-render to update the list of products
-    } catch (error) {
-      console.log(error);
-    }
+      // setRefreshKey(oldKey => oldKey + 1); // Trigger a re-render to update the list of products
+    
   };
 
 
@@ -200,7 +204,7 @@ function AdminPage() {
         category_id: 0,
         date_active: ''
       });
-      setRefreshKey(oldKey => oldKey + 1);
+      // setRefreshKey(oldKey => oldKey + 1);
     } else {
       alert("Failed to add product.");
     }
@@ -237,6 +241,13 @@ function AdminPage() {
                         <label className='admin-product-label-input'> 
                             Image URL:
                             <input type="text" name="image_url" value={newProduct.image_url} onChange={handleInputChange} />
+                        </label>
+                        <label>
+                          <select name="category_id" value={newProduct.category_id} onChange={handleInputChange}>
+                            <option value="">Select a Category</option>
+                            <option value="1">Shirts</option>
+                            <option value="2">Posters</option>
+                          </select>
                         </label>
                         <button onClick={handleAddProduct} type="submit">Add Product</button>
                     </form>
