@@ -153,6 +153,10 @@ function AdminPage() {
   }
 
   const handleRemoveProduct = async (id) => {
+
+
+    try {
+
       
       const response = await fetch(`http://localhost:8080/products/${id}`, {
         method: "DELETE",
